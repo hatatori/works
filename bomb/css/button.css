@@ -1,0 +1,23 @@
+button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #120c0e;
+  border: none;
+  outline: none;
+  color: #72595f;
+  font-weight: bold;
+  font-size: 1.1em;
+  min-width: 50px;
+  min-height: 50px;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: #478d4a;
+  color: white;
+}
+
+.btn-warning {
+  background-color: #964a00;
+  color: white;
+}

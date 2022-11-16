@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="plus.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div></div>
+      <div>
+        <button id="p_wallet">R$ 10</button>
+        <img src="./imgs/wallet.svg" alt="" />
+      </div>
+    </header>
+
+    <main>
+      <section class="info">
+        <div>
+          <img src="./imgs/coin.png" />
+          <p id="p_moneyGame">R$ 255</p>
+        </div>
+
+        <button id="p_multGame">3.5x</button>
+      </section>
+
+      <section id="cards" class="cards">
+        <div class="card">
+          <div class="card-in">
+            <!-- <img src="./imgs/coin.png" /> -->
+            <img src="." />
+          </div>
+        </div>
+      </section>
+
+      <section class="hud">
+        <button id="btn_half">1/2</button>
+        <input id="inp_betValue" disabled type="text" value="R$ 1,00" />
+        <button id="btn_double">x2</button>
+        <button id="btn_apostar" class="btn_apostar">Apostar</button>
+      </section>
+
+      <section>
+        <h1>Bombas</h1>
+        <p>O quanto maior a quantidade de bombas, maior o valor do bônus.</p>
+      </section>
+
+      <footer>
+        <section class="controls">
+          <div><img src="./imgs/bomb.png" /></div>
+          <div id="div_bombs" class="buttons">
+            <button value="1">1</button>
+            <button value="2">2</button>
+            <button value="3">3</button>
+            <button value="4">4</button>
+            <button value="5">5</button>
+            <button value="6">6</button>
+          </div>
+        </section>
+
+        <section class="stats">
+          <div>
+            <img src="./imgs/bomb.png" />
+            <p id="p_statBomb">6</p>
+          </div>
+          <div>
+            <img src="./imgs/coin.png" />
+            <p id="p_statCoin">19</p>
+          </div>
+        </section>
+      </footer>
+    </main>
+  </body>
+</html>

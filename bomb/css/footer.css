@@ -1,0 +1,43 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+  gap: 5em;
+}
+
+footer .controls {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+}
+
+footer .controls p {
+}
+
+footer .buttons {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  gap: 10px;
+}
+
+footer .stats {
+  display: grid;
+  /* justify-content: space-between; */
+  gap: 10px;
+}
+
+footer .stats div {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  cursor: pointer;
+}
+
+footer .stats p {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0 0.5em;
+}
+
+footer .stats div img {
+  height: 50px;
+  width: 50px;
+}

@@ -1,0 +1,20 @@
+header {
+  background-color: #120c0e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: centerr;
+  gap: 0px;
+}
+
+header img {
+  padding: 0px;
+  height: 30px;
+  width: 30px;
+}

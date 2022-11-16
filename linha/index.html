@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- aside -->
+    <aside id="aside" class="aside aside--off">
+      <div class="icon_close" id="icon_close">
+        <img src="./imgs/close.svg" />
+      </div>
+      <section id="div_historico" class="historico">
+        <button class="btn btn--blue">3.2</button>
+        <button class="btn btn--orange">3.2</button>
+        <button class="btn btn--purple">3.2</button>
+      </section>
+      <section class="dados">
+        <article>
+          <div class="t-blue">3.3x</div>
+          <div>
+            <p>Maria</p>
+            <p>R$ 1000</p>
+          </div>
+          <div>
+            <p>3.2x</p>
+            <p class="t-green">R$ 2600</p>
+          </div>
+        </article>
+      </section>
+    </aside>
+
+    <main>
+      <!-- menu topo -->
+      <section class="menu">
+        <div id="icon_menu">
+          <img src="./imgs/menu.svg" />
+        </div>
+        <div class="automatic">
+          <label for="checkbox">
+            <input id="checkbox" type="checkbox" />
+            <p><img src="./imgs/auto.svg" /></p>
+          </label>
+        </div>
+        <div>
+          <p id="p_money">R$ 100</p>
+          <button class="btn btn--pink"><img src="./imgs/wallet.svg" /></button>
+        </div>
+      </section>
+
+      <!-- bloco -->
+      <section id="bloco" class="bloco">
+        <div id="div_estrelas" class="estrelas"></div>
+        <svg id="svg" height="100%" width="100%">
+          <line id="svg_line" x1="0" y1="0" x2="200" y2="200" style="stroke: #e3014b; stroke-width: 5" />
+        </svg>
+        <img class="img_foguete" id="img_foguete" src="./imgs/foguete.svg" />
+        <p id="p_texto" class="text_screen"></p>
+        <p id="p_win" class="text"></p>
+      </section>
+
+      <section class="hud">
+        <div class="hud-box">
+          <button class="btn btn--blue" id="bt_half">1/2</button>
+          <input id="inp_bet_value" type="text" disabled value="R$ 1" />
+          <button class="btn btn--blue" id="bt_double">x2</button>
+        </div>
+        <div class="hud-box">
+          <button class="btn btn--blue" id="bt_less">-</button>
+          <input id="inp_mult_value" type="text" disabled value="1x" />
+          <button class="btn btn--blue" id="bt_plus">+</button>
+        </div>
+        <button class="btn btn--pink" id="bt_main">Apostar</button>
+      </section>
+    </main>
+  </body>
+</html>

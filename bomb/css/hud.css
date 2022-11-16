@@ -1,0 +1,9 @@
+.hud {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 10px;
+}
+
+.btn_apostar {
+  grid-column: 1/4;
+}
