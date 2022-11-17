@@ -29,9 +29,11 @@ export default function game() {
   btn_apostar.onclick = () => {
     if (stats.buttonText == "Apostar") {
       stats.setButtonText("Apostou");
-      btn_apostar.style.background = "#555555";
-      stats.setCanBet(false);
-      stats.setWallet(stats.wallet - stats.betValue);
+      btn_apostar.innerHTML = "Apostou";
+      // console.log("ok");
+      // btn_apostar.style.background = "#555555";
+      // stats.setCanBet(false);
+      // stats.setWallet(stats.wallet - stats.betValue);
     }
   };
 }

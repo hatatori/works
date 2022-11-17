@@ -14,6 +14,9 @@ let stats = {
 
   setButtonText(txt) {
     this.buttonText = txt;
+
+    if (this.buttonText == "Apostou") btn_apostar.style.backgroundColor = "#555";
+    else btn_apostar.removeAttribute("style");
   },
 
   setGameOver(bool) {
@@ -39,8 +42,9 @@ let stats = {
 
   reset() {
     this.setButtonText("Apostar");
-    this.canBet(true);
+    this.setCanBet(true);
     btn_apostar.removeAttribute("style");
+    btn_apostar.innerHTML = "Apostar";
   },
 
   hud_off() {
@@ -62,7 +66,9 @@ let stats = {
     document.querySelector(".escolha > .btn-active").classList.remove("btn-active");
     document.querySelectorAll(".escolha > button")[this.choice].classList.add("btn-active");
 
-    btn_apostar.innerHTML = this.buttonText;
+    // btn_apostar.innerHTML = "Apostar";
+    // this.setButtonText(this.buttonText);
+
     p_wallet.innerHTML = Money(this.wallet);
     inp_betvalue.value = Money(this.betValue);
   },

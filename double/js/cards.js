@@ -32,15 +32,12 @@ let cards = {
       this.div.scrollLeft += this.force;
     }
 
-    //onde termina
+    //onde termina - fim
     if (parseInt(this.force) == 0 && stats.gameover == false) {
       historic.add(this.choice_number);
-      loading.setTime(500);
+      loading.setTime(100);
       stats.setGameOver(true);
-
-      if (stats.buttonText == "Apostou") {
-        stats.setButtonText("Apostar");
-      }
+      stats.reset();
     }
 
     // onde começa a girar
