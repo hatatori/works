@@ -35,7 +35,7 @@ let cards = {
     //onde termina - fim
     if (parseInt(this.force) == 0 && stats.gameover == false) {
       historic.add(this.choice_number);
-      loading.setTime(100);
+      loading.setTime(500);
       stats.setGameOver(true);
       stats.reset();
     }
