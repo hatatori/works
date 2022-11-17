@@ -20,34 +20,47 @@ let stats = {
     this.gameover = bool;
   },
 
-  setChoice(n) {
-    this.choice = n;
-  },
-
   setWallet(n) {
     this.wallet = n;
   },
 
   setBetValue(n) {
+    if (this.canBet == false) return false;
+    if (this.buttonText == "Apostou") return false;
     if (n <= 1) n = 1;
     this.betValue = n;
   },
 
   setChoice(n) {
+    if (this.buttonText == "Apostou") return false;
+    if (this.canBet == false) return false;
     this.choice = n;
+  },
+
+  reset() {
+    this.setButtonText("Apostar");
+    this.canBet(true);
+    btn_apostar.removeAttribute("style");
+  },
+
+  hud_off() {
+    document.querySelector(".escolha").style.opacity = 0.5;
+    document.querySelector(".escolha").style.pointerEvents = "none";
+    document.querySelector(".hud").style.opacity = 0.5;
+    document.querySelector(".hud").style.pointerEvents = "none";
+  },
+
+  hud_on() {
+    document.querySelector(".escolha").style.opacity = 1;
+    document.querySelector(".escolha").style.pointerEvents = "all";
+    document.querySelector(".hud").style.opacity = 1;
+    document.querySelector(".hud").style.pointerEvents = "all";
+    stats.setCanBet(true);
   },
 
   render() {
     document.querySelector(".escolha > .btn-active").classList.remove("btn-active");
     document.querySelectorAll(".escolha > button")[this.choice].classList.add("btn-active");
-
-    btn_apostar.onclick = () => {
-      if (this.buttonText == "Apostar") {
-        this.setButtonText("Apostou");
-        btn_apostar.style.background = "#555555";
-        this.setCanBet(false);
-      }
-    };
 
     btn_apostar.innerHTML = this.buttonText;
     p_wallet.innerHTML = Money(this.wallet);

@@ -25,6 +25,15 @@ export default function game() {
   btn_escolha_1.onclick = () => stats.setChoice(0);
   btn_escolha_2.onclick = () => stats.setChoice(1);
   btn_escolha_3.onclick = () => stats.setChoice(2);
+
+  btn_apostar.onclick = () => {
+    if (stats.buttonText == "Apostar") {
+      stats.setButtonText("Apostou");
+      btn_apostar.style.background = "#555555";
+      stats.setCanBet(false);
+      stats.setWallet(stats.wallet - stats.betValue);
+    }
+  };
 }
 
 game();

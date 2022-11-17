@@ -1,4 +1,4 @@
-import game from "./game.js";
+// import game from "./game.js";
 import historic from "./historic.js";
 import loading from "./loading.js";
 import stats from "./stats.js";
@@ -32,22 +32,20 @@ let cards = {
       this.div.scrollLeft += this.force;
     }
 
+    //onde termina
     if (parseInt(this.force) == 0 && stats.gameover == false) {
       historic.add(this.choice_number);
       loading.setTime(500);
       stats.setGameOver(true);
+
+      if (stats.buttonText == "Apostou") {
+        stats.setButtonText("Apostar");
+      }
     }
 
-    if (stats.gameover == false) {
-      document.querySelector(".escolha").style.opacity = 0.5;
-      document.querySelector(".escolha").style.pointerEvents = "none";
-      document.querySelector(".hud").style.opacity = 0.5;
-      document.querySelector(".hud").style.pointerEvents = "none";
-    } else {
-      document.querySelector(".escolha").style.opacity = 1;
-      document.querySelector(".escolha").style.pointerEvents = "all";
-      document.querySelector(".hud").style.opacity = 1;
-      document.querySelector(".hud").style.pointerEvents = "all";
+    // onde começa a girar
+    if (parseInt(this.force) == 0) {
+      stats.hud_on();
     }
 
     window.requestAnimationFrame(this.update.bind(this));
