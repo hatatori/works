@@ -14,7 +14,7 @@ let estrelas = {
   n: 0,
   proximaEstrela() {
     --this.n;
-    this.el.style.backgroundPosition = this.n * 2 + "px " + 1.5 * this.n * -1 + "px";
+    this.el.style.backgroundPosition = 0 + "px " + -this.n * 2 + "px";
   },
 };
 
@@ -58,7 +58,7 @@ let foguete = {
     let dx = game.width;
     let dy = game.height;
     let eq = Math.atan(dy / dx) * 60;
-    this.setAngle(eq);
+    this.setAngle(90);
   },
 
   toExplode() {
@@ -208,9 +208,10 @@ class Game {
   }
 
   line(n) {
-    n = n >= 90 ? 90 : n;
-    this.setCoordinates((n * this.width) / 100, this.height - (n * this.height) / 100);
-    draw_line(0, this.height, this.coordinates.x, this.coordinates.y);
+    n = n >= 80 ? 80 : n;
+    this.setCoordinates(this.width - 100, this.height - (n * this.height) / 100);
+    // draw_line(0, this.height, this.coordinates.x, this.coordinates.y);
+    draw_line(this.width - 100, this.height, this.width - 100, this.coordinates.y);
     foguete.setCoordinates(this.coordinates.x, this.coordinates.y);
   }
 
@@ -246,6 +247,8 @@ class Game {
     if (!this.pause) {
       this.number_rocket += 0.4;
       this.number += 0.01;
+
+      fundo.style.transform = `translateY(${this.number_rocket * 10}px)`;
 
       this.number_rocket = Number(parseFloat(this.number_rocket).toFixed(2));
       this.number = Number(parseFloat(this.number).toFixed(2));
@@ -331,7 +334,7 @@ class Game {
     p_win.innerHTML = "";
 
     foguete.reset();
-    foguete.setAngle(20);
+    foguete.setAngle(90);
 
     if (this.option == "Aguarde") this.setOption("Retirar");
   }

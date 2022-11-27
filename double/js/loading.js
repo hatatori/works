@@ -24,12 +24,13 @@ let loading = {
     this.setTime(--this.time);
   },
 
-  // end() {
-  //   console.log("ok");
-  // },
+  end() {
+    console.log("ok");
+  },
 
   start() {
-    cards.choice(parseInt(Math.random() * 10 + 1));
+    // cards.choice(parseInt(Math.random() * 10 + 1));
+    cards.choice(2);
     stats.hud_off();
   },
 

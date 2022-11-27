@@ -23,8 +23,8 @@ let stats = {
     this.gameover = bool;
   },
 
-  setWallet(n) {
-    this.wallet = n;
+  setWallet(val) {
+    this.wallet = val;
   },
 
   setBetValue(n) {
@@ -45,6 +45,8 @@ let stats = {
     this.setCanBet(true);
     btn_apostar.removeAttribute("style");
     btn_apostar.innerHTML = "Apostar";
+    this.hud_on();
+    this.render();
   },
 
   hud_off() {

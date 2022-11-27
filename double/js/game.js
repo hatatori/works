@@ -3,8 +3,8 @@ import loading from "./loading.js";
 import historic from "./historic.js";
 
 let config = {
-  wallet: 4651,
-  time: 300,
+  wallet: 500,
+  time: 200,
   list: [1, 2],
 
   init() {
@@ -27,13 +27,11 @@ export default function game() {
   btn_escolha_3.onclick = () => stats.setChoice(2);
 
   btn_apostar.onclick = () => {
-    if (stats.buttonText == "Apostar") {
-      stats.setButtonText("Apostou");
+    if (btn_apostar.innerHTML == "Apostar") {
+      btn_apostar.style.backgroundColor = "#555";
       btn_apostar.innerHTML = "Apostou";
-      // console.log("ok");
-      // btn_apostar.style.background = "#555555";
-      // stats.setCanBet(false);
-      // stats.setWallet(stats.wallet - stats.betValue);
+      stats.setCanBet(false);
+      stats.setWallet(stats.wallet - stats.betValue);
     }
   };
 }

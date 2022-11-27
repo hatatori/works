@@ -1,4 +1,5 @@
 // import game from "./game.js";
+import game from "./game.js";
 import historic from "./historic.js";
 import loading from "./loading.js";
 import stats from "./stats.js";
@@ -6,20 +7,19 @@ import stats from "./stats.js";
 let cards = {
   force: 0,
   div: div_cards,
+  x: 0,
 
   add(number) {
     let div = document.createElement("div");
     div.className = number % 2 ? "card card--green" : "card card--blue";
     div.className = number % 2 == 0 ? "card card--green" : "card card--blue";
     div.number = number;
-
     if (number == 10) {
       div.className = "card card--white";
       number = "x";
     }
-
     div.innerHTML = `<div class="card"><p>${number}</p></div>`;
-    cards.div.appendChild(div);
+    cards_in.appendChild(div);
   },
 
   add_quantity(quantity) {
@@ -28,35 +28,55 @@ let cards = {
 
   update() {
     if (this.force > 0) {
-      this.force *= 0.99;
-      this.div.scrollLeft += this.force;
+      this.force -= 0.2;
+
+      this.x -= this.force;
+      cards_in.style.transform = `translateX(${this.x}px)`;
     }
 
-    //onde termina - fim
+    //   //onde termina - fim
     if (parseInt(this.force) == 0 && stats.gameover == false) {
       historic.add(this.choice_number);
-      loading.setTime(500);
-      stats.setGameOver(true);
-      stats.reset();
-    }
+      loading.setTime(350);
 
-    // onde começa a girar
-    if (parseInt(this.force) == 0) {
-      stats.hud_on();
+      //check win
+      if (stats.gameover == false && btn_apostar.innerHTML == "Apostou") {
+        // console.log(this.choice_number);
+        // console.log(stats.choice);
+
+        console.log(stats.choice);
+        console.log(this.choice_number);
+        if (stats.choice == 1 && this.choice_number == 0) {
+          stats.setWallet(stats.wallet + stats.betValue * 14);
+        }
+        if (stats.choice == 0 && this.choice_number != 0 && this.choice_number % 2 == 1) {
+          stats.setWallet(stats.wallet + stats.betValue * 2);
+        }
+        if (stats.choice == 2 && this.choice_number != 0 && this.choice_number % 2 == 0) {
+          stats.setWallet(stats.wallet + stats.betValue * 2);
+        }
+      }
+
+      stats.reset();
+      stats.setGameOver(true);
+      // this.choice(parseInt(Math.random() * 10));
     }
+    // onde começa a girar
 
     window.requestAnimationFrame(this.update.bind(this));
   },
 
   choice(n) {
-    this.div.scrollLeft = 0;
-    this.force = 52.9 + 1.118 * (n + 4);
+    this.x = 0;
+    let pos = [55.2, 51.45, 51.9, 52.31, 52.75, 53.15, 53.55, 53.98, 54.38, 54.78];
+    this.force = pos[n];
     this.choice_number = n;
     stats.setGameOver(false);
   },
 };
 
 cards.add_quantity(500);
+// cards.choice(0);
 
 window.requestAnimationFrame(cards.update.bind(cards));
 
