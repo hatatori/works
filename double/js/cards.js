@@ -68,7 +68,7 @@ let cards = {
 
   choice(n) {
     this.x = 0;
-    let pos = [55.2, 51.45, 51.9, 52.31, 52.75, 53.15, 53.55, 53.98, 54.38, 54.78];
+    let pos = [55.2, 51.478, 51.91, 52.33, 52.75, 53.16, 53.58, 53.99, 54.39, 54.8];
     this.force = pos[n];
     this.choice_number = n;
     stats.setGameOver(false);
@@ -76,7 +76,7 @@ let cards = {
 };
 
 cards.add_quantity(500);
-// cards.choice(0);
+// cards.choice(9);
 
 window.requestAnimationFrame(cards.update.bind(cards));
 
