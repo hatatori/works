@@ -29,8 +29,8 @@ let loading = {
   },
 
   start() {
-    // cards.choice(parseInt(Math.random() * 10 + 1));
-    cards.choice(2);
+    cards.choice(parseInt(Math.random() * 10 + 1));
+    // cards.choice(2);
     stats.hud_off();
   },
 
