@@ -100,7 +100,7 @@
       <!-- painel valores -->
       <section class="painel">
         <div id="p_somatotal" name="Soma Total" class="square--gold">R$ 0,00</div>
-        <div onclick="game.escolha(parseInt(Math.random()*24+1))" class="btn btn--green">Play</div>
+        <div id="bt_play" class="btn btn--green">Play</div>
         <div name="Aposta base" class="square--gold square--gold--flex">
           <span id="bt_less">-</span>
           <div class="square--center"><p id="p_aposta_base">R$10,00</p></div>
@@ -118,11 +118,12 @@
       </section>
 
       <section id="s_message" class="message">
+        <p>Alguma coisa</p>
         <div>
           <img src="./assets/styles/youwin.png" />
         </div>
       </section>
     </main>
-    <script src="Game.js"></script>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
