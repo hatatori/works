@@ -40,9 +40,17 @@
   transform: translateZ(1px);
 }
 
-.card--red div {
+/* .card--red div {
   box-shadow: inset 0px 0px 10px 10px #ff000040, inset 0px 0px 0px 5px #ff0000;
 }
 .card--yellow div {
+  box-shadow: inset 0px 0px 10px 10px #e5ff0040, inset 0px 0px 0px 5px #ffea00;
+} */
+
+
+.card--red > .card-in {
+  box-shadow: inset 0px 0px 10px 10px #ff000040, inset 0px 0px 0px 5px #ff0000;
+}
+.card--yellow > .card-in {
   box-shadow: inset 0px 0px 10px 10px #e5ff0040, inset 0px 0px 0px 5px #ffea00;
 }

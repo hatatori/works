@@ -12,12 +12,13 @@ button {
   cursor: pointer;
 }
 
-.btn-success {
-  background-color: #478d4a;
+.btn-green {
+  background-color: var(--green);
   color: white;
 }
 
-.btn-warning {
-  background-color: #964a00;
+.btn-orange {
+  background-color: var(--orange);
   color: white;
 }
+

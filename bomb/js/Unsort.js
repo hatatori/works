@@ -1,4 +1,4 @@
-function unsort(array) {
+function Unsort(array) {
   var m = array.length,
     t,
     i;
@@ -13,3 +13,5 @@ function unsort(array) {
 
   return array;
 }
+
+export default Unsort;
