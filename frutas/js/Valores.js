@@ -10,22 +10,28 @@ let Valores = {
 
   setSaldoReal(value) {
     this.saldoReal = value;
+    this.render()
   },
   setSaldoJogo(value) {
     this.saldoJogo = value;
+    this.render()
   },
   setSomaTotal(value) {
     this.somaTotal = value;
+    this.render()
   },
+
   setApostaBase(value) {
     if (value < 1) return false;
 
     if (value < this.saldoReal) {
       this.apostaBase = value;
     }
+    this.render()
   },
   setPlaca(value) {
     this.placa = value;
+    this.render()
   },
 
   Jogo2Real() {
@@ -43,6 +49,7 @@ let Valores = {
     // this.transfer2();
 
     Animation.transfer2();
+    this.render()
   },
 
   Real2Jogo() {
@@ -53,6 +60,7 @@ let Valores = {
       this.setSaldoReal(this.saldoReal - this.saldoJogo);
       this.setSaldoJogo(this.saldoJogo * 2);
     }
+    this.render();
     
     // this.setSaldoJogo(this.saldoJogo+this.somaTotal)
   },

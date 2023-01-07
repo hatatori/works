@@ -19,9 +19,8 @@ let Square = {
     this.Hover(++this.position % 24);
   },
 
-
-  setSpeed(value){
-    this.speed = value
+  setSpeed(value) {
+    this.speed = value;
   },
 
   setPosition(value) {
@@ -38,23 +37,37 @@ let Square = {
       this.Next();
     }
 
-    if(this.speed <= 980 && this.position%24 == escolha){
-      Logic.Win()
-      Logic.setCanBet(true)
-      return false
+    if (this.speed <= 980 && this.position % 24 == escolha) {
+      Logic.Win();
+      Logic.setCanBet(true);
+      this.Active(escolha);
+      return false;
     }
 
     setTimeout(() => {
       this.Choice(escolha);
-    }, (1000 - this.speed));
+    }, 1000 - this.speed);
   },
 
-  ChoiceRandom(){
-    this.Choice(parseInt(Math.random() * 23))
-  }
+  ChoiceRandom() {
+    this.Choice(parseInt(Math.random() * 23));
+  },
+
+  Active(n) {
+    this.Desactive();
+    squares.children[n].classList.add("square_block--active");
+  },
+
+  ActiveN(n) {
+    squares.children[n].classList.add("square_block--active");
+  },
+
+  Desactive() {
+    for (let i of squares.children) i.classList.remove("square_block--active");
+  },
 };
 
-
+// Square.Active(5)
 
 // square_block--active
 

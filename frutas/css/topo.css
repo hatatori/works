@@ -10,10 +10,13 @@
   background-color: red;
   padding: 5px 1em;
   background: linear-gradient(#b76725, #ae4210);
-  border: #EDC453 2px solid;
-  border-radius: 10px;
+  border: #EDC453 3px solid;
+  border-radius: 5px;
   font-size: .75em;
   width: 150px;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 10px;
 }
 
 .topo--mid{

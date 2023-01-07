@@ -9,10 +9,8 @@ let Events = {
   init() {
     function Add(fruit) {
       document.querySelector("#btn_" + fruit).onclick = () => {
-        
-        if (Logic.canBet == false) return false;
 
-        
+        if (Logic.canBet == false) return false;
 
         Frutas.Frutas.setFruit(fruit, ++Frutas.Frutas[fruit]);
         Valores.setSomaTotal(Valores.somaTotal + Valores.apostaBase);
@@ -23,9 +21,11 @@ let Events = {
 
     bt_plus.onclick = () => {
       if (Logic.canBet == false) return false;
+
       Valores.setApostaBase(Valores.apostaBase * 2);
       Valores.setSomaTotal(0);
       Frutas.Zerar();
+      
     };
 
     bt_less.onclick = () => {
@@ -45,10 +45,28 @@ let Events = {
 
       if (Logic.canBet == false) return false;
 
+
+      if (Valores.somaTotal == 0) {
+        Message.simples("Escolha pelo menos uma fruta");
+        return;
+      }
+
+      if (Valores.saldoReal - Valores.apostaBase < 0) {
+        Message.simples("O valor da aposta base deve ser menor");
+        return;
+      }
+
+      if (Valores.saldoReal - Valores.somaTotal < 0) {
+        Message.simples("O valor da soma total deve ser menor");
+        return;
+      }
+
       if (Valores.somaTotal > Valores.saldoReal) {
         Message.simples("O valor apostado é maior que o valor em conta");
-        return false;
+        return;
       } 
+
+      
 
       Logic.canBet = false;
 
@@ -56,8 +74,11 @@ let Events = {
 
       Square.setPosition(0);
       Square.setSpeed(1000);
+      Square.Desactive();
 
-      Square.Choice(parseInt(Math.random()*24));
+      // Square.Choice(parseInt(Math.random()*24));
+      // Square.Choice(5);
+      Square.Choice(9);
 
       if(Valores.saldoJogo > 0){
         Animation.transfer2()
