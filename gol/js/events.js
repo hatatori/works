@@ -1,13 +1,17 @@
 import ball from "./ball.js";
-import character from './character.js'
+import ballwhite from "./ballwhite.js";
+import character from "./character.js";
+import message from "./message.js";
+import sounds from "./sounds.js";
+import values from "./values.js";
 
-let events = {}
+let events = {};
 
-el_ball_choice_left.onclick = () => {
-  character.animation.left()
-  if (character.state == 'left') ball.animation.leftout();
-  else ball.animation.left();
-}
+// el_ball_choice_left.onclick = () => {
+//   character.animation.left()
+//   if (character.state == 'left') ball.animation.leftout();
+//   else ball.animation.left();
+// }
 
 // el_ball_choice_right.onclick = () => {
 //   character.animation.right()
@@ -15,14 +19,13 @@ el_ball_choice_left.onclick = () => {
 //   else ball.animation.right();
 // }
 
-
 // el_ball_choice_left.onclick = () => character.animation.left()
-el_ball_choice_leftup.onclick = () => character.animation.leftup()
-el_ball_choice_up.onclick = () => character.animation.up()
-el_ball_choice_right.onclick = () => character.animation.right()
-el_ball_choice_rightup.onclick = () => character.animation.rightup()
+// el_ball_choice_leftup.onclick = () => character.animation.leftup()
+// el_ball_choice_up.onclick = () => character.animation.up()
+// el_ball_choice_right.onclick = () => character.animation.right()
+// el_ball_choice_rightup.onclick = () => character.animation.rightup()
 
+bt_less.onclick = () => { values.setBetvalue(values.betvalue / 2) };
+bt_plus.onclick = () => { values.setBetvalue(values.betvalue * 2) };
 
-
-
-export default events
+export default events;

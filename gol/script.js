@@ -19,10 +19,16 @@ function choice_character_ball(character_direction, ball_direction){
     character.animation[character_direction] ()
     ball.animation[ball_direction]()
         
-    if(character_direction  != ball_direction){
+    if(character_direction != ball_direction){
         setTimeout(()=>{
-            message.mult("13.8x", ball_direction);
+            // message.mult("13.8x", ball_direction);
+            message.mult("x"+values.multlist[values.mult], ball_direction);
+            values.setEarns(values.earns * values.multlist[values.mult]);
+            values.setProgress(++values.mult)
         },500)
+    }else{
+        values.setProgress(0);
+        values.setEarns(0);
     }
 
     // character.animation.leftup();
@@ -42,12 +48,13 @@ function choice(a,b){
 }
 
 
-window.onclick=()=> {
-    let directions = "left,leftup,up,rightup,right".split(",");
-    let a = directions[parseInt(Math.random() * 5)];
-    let b = directions[parseInt(Math.random() * 5)];
-    choice(a, b)
-}
+// window.onclick=()=> {
+//     let directions = "left,leftup,up,rightup,right".split(",");
+//     let a = directions[parseInt(Math.random() * 5)];
+//     let b = directions[parseInt(Math.random() * 5)];
+//     choice(a, b)
+// sounds.music();
+// }
 
 window.onkeyup = e => {
     if(e.key == " "){

@@ -1,9 +1,9 @@
 let values = {
 
   betvalue:20,
-  earns: 20,
+  earns: 5,
   cash: 30,
-  multlist: [ 1.9 , 2.7, 5.3,2,2,2],
+  multlist: [ 1.9 , 2.7, 5.3, 7.5, 8.6, 11.2],
   mult: 0,
   team1: "brazil",
   team2: "usa",
@@ -13,6 +13,9 @@ let values = {
   },
 
   setBetvalue(n) {
+    if(n <= 1) n = 1;
+
+    n = parseInt(n)
     this.betvalue = n;
     el_betvalue.innerHTML = this.money(this.betvalue);
   },
@@ -60,7 +63,7 @@ let values = {
 };
 
 values.render()
-values.setProgress(2);
+values.setProgress(0);
 
 
 

@@ -57,7 +57,7 @@
   box-shadow: 3px 3px 3px #00000055, -1px 0px 0px 0px #000000;
   border-radius: 30px;
   width: 30%;
-  
+  transition: 0.5s;
 }
 
 .hud_top .barra .text{

@@ -46,7 +46,7 @@ let message = {
   }
 }
 
-// message.team("china", "brazil")
+message.team("usa", "brazil")
 
 
 // message.mult("13.3x", "left");
