@@ -4,6 +4,7 @@ import character from './js/character.js'
 import events from './js/events.js'
 import message from './js/message.js'
 import sounds from "./js/sounds.js";
+import values from "./js/values.js";
 
 sounds.music()
 
@@ -42,10 +43,17 @@ function choice(a,b){
 
 
 window.onclick=()=> {
-
     let directions = "left,leftup,up,rightup,right".split(",");
     let a = directions[parseInt(Math.random() * 5)];
     let b = directions[parseInt(Math.random() * 5)];
-
     choice(a, b)
+}
+
+window.onkeyup = e => {
+    if(e.key == " "){
+        let directions = "left,leftup,up,rightup,right".split(",");
+        let a = directions[parseInt(Math.random() * 5)];
+        let b = directions[parseInt(Math.random() * 5)];
+        choice(a, b);
+    }
 }

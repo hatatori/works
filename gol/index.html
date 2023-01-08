@@ -15,24 +15,76 @@
 
     <section id="el_campo">
 
-        <section class="hud_top">
-            <img src="./imgs/flags/brazil.jpg">
-            <div class="barra">
-                <div class="text" data-value="x1.92"></div>
-                <div class="text" data-value="x3.84"></div>
-                <div class="text" data-value="x7.68"></div>
-                <div class="text" data-value="x15.36"></div>
-                <div class="text" data-value="x30.72"></div>
-                <div class="progress"></div>
+        <section id="selection_team">
+            <div class="selection">
+                <div>
+                    <img class="clother" src="./imgs/clothers/argentina.png">
+                    <img class="flag" src="./imgs/flags/argentina.jpg">
+                </div>
+                <div>
+                    <img class="clother" src="./imgs/clothers/brazil.png">
+                    <img class="flag" src="./imgs/flags/brazil.jpg">
+                </div>
+                <div>
+                    <img class="clother" src="./imgs/clothers/france.png">
+                    <img class="flag" src="./imgs/flags/france.jpg">
+                </div>
+                <div>
+                    <img class="clother" src="./imgs/clothers/germany.png">
+                    <img class="flag" src="./imgs/flags/germany.jpg">
+                </div>
+                <div>
+                    <img class="clother" src="./imgs/clothers/italy.png">
+                    <img class="flag" src="./imgs/flags/italy.jpg">
+                </div>
+                <div>
+                    <img class="clother" src="./imgs/clothers/netherlands.png">
+                    <img class="flag" src="./imgs/flags/netherlands.jpg">
+                </div>
+                <div>
+                    <img class="clother" src="./imgs/clothers/portugal.png">
+                    <img class="flag" src="./imgs/flags/portugal.jpg">
+                </div>
+                <div>
+                    <img class="clother" src="./imgs/clothers/spain.png">
+                    <img class="flag" src="./imgs/flags/spain.jpg">
+                </div>
+                <div>
+                    <img class="clother" src="./imgs/clothers/usa.png">
+                    <img class="flag" src="./imgs/flags/usa.jpg">
+                </div>
             </div>
-            <img src="./imgs/flags/german.jpg">
+        </section>
+
+        <section class="hud_top">
+            
+            <img id="el_team1" src="./imgs/flags/brazil.jpg">
+            
+            <div class="grupo">
+
+                <div class="progress_up">
+                    <div id="el_progress" class="progress"></div>
+                </div>
+                
+                <div class="barra">
+                    <div class="text" data-value="x1.92"></div>
+                    <div class="text" data-value="x3.84"></div>
+                    <div class="text" data-value="x7.68"></div>
+                    <div class="text" data-value="x15.36"></div>
+                    <div class="text" data-value="x30.72"></div>
+                </div>
+
+            </div>
+
+            <img id="el_team2" src="./imgs/flags/germany.jpg">
+
         </section>
 
         <div class="painel">
 
             <div class="inp text" data-value="Valor da aposta">
                 <p class="circle center"><img width="30" src="./imgs/icons/less.svg"></p>
-                <p>R$ 2000</p>
+                <p id="el_betvalue">R$ 2000</p>
                 <p class="circle center"><img width="30" src="./imgs/icons/plus.svg"></p>
             </div>
 
@@ -49,10 +101,10 @@
             </div>
             
             <div class="inp text" data-value="Ganhos R$">
-                <p>R$ 0,00</p>
+                <p id="el_earns">R$ 0,00</p>
             </div>
             <div class="inp text" data-value="Caixa R$">
-                <p>R$ 300,00</p>
+                <p id="el_cash">R$ 300,00</p>
             </div>
 
         </div>

@@ -2,9 +2,11 @@
   width: 80%;
   background-color: #00000055;
   top: 2%;
-  padding: 10px;
+  padding: 1em 3em;
+  gap: 1em;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  /* justify-content: space-around; */
   border-radius: 100px;
   align-items: center;
 }
@@ -22,21 +24,46 @@
   padding-bottom: 30px;
 }
 
-.hud_top .barra .progress{
+.progress1{
+  width: 100px;
+  height: 10px;
+  /* position: absolute; */
+  width: 100%;
+  float: left;
+}
+
+.grupo{
+  display: grid;
+  width: 100%;
+}
+
+.grupo .barra{
+  width: 100%;
+}
+
+.progress_up{
+  width: 100%;
+  height: 0px;
+  float: left;
+  padding: 0em 2em;
+  translate: 0 11px;
+  z-index: 3;
+}
+
+.progress{
   width: 10px;
   height: 10px;
-  /* background-color: #5fb428; */
   background: linear-gradient(#5fb428 5px, #376c14 10px);
   box-shadow: 3px 3px 3px #00000055, -1px 0px 0px 0px #000000;
-  position: absolute;
   border-radius: 30px;
-  width: 300px;
+  width: 30%;
+  
 }
 
 .hud_top .barra .text{
   width: 10px;
   height: 10px;
-  background-color: white;
+  background: linear-gradient(#5fb428 5px, #376c14 10px);
   border-radius: 100%;
 }
 

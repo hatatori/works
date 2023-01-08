@@ -1,6 +1,6 @@
 #el_campo{
     width: 1366px;
-    max-width: 100%;
+    /* max-width: 90%; */
     height: 768px;
     max-height: 100%;
     background: url(../imgs/background.jpg);
@@ -11,8 +11,9 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    /* border-radius: 10px; */
-    overflow: hidden;
+    border-radius: 10px;
+    resize: both;
+    overflow: auto;
 }
 
 #el_campo > *{
