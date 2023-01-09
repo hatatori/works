@@ -6,8 +6,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
-    display: none;
+    background-color: black;
+    /* display: none; */
+    transition: 0.5s;
 }
 
 .selection img{

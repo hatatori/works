@@ -7,9 +7,8 @@ import message from './js/message.js'
 import sounds from "./js/sounds.js";
 import values from "./js/values.js";
 import logic from './js/logic.js';
+import team from "./js/team.js";
 
-sounds.music()
-sounds.crowd()
 
 // window.onclick=()=> {
 //     let directions = "left,leftup,up,rightup,right".split(",");

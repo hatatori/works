@@ -34,6 +34,10 @@ let message = {
       div.style.opacity = 0;
     },2000)
 
+    setTimeout(()=>{
+      div.remove()
+    },3000)
+
     el_campo.appendChild(div);
   },
 
@@ -73,22 +77,16 @@ let message = {
     div.style.bottom = y+"%";
     div.style.translate = "-45px";
 
-    // div.style.left = "auto";
-    // div.style.top = "auto";
-    // div.style.bottom = "auto";
-    // div.style.right = "auto";
-
-
     div.innerHTML = `<div class="msg message-show-in-out">${msg}</div>`;
     // div.innerHTML = `<div class="msg">${msg}</div>`;
 
     el_campo.appendChild(div);
     setTimeout((e) => {div.remove();}, 3000);
-    
+
   }
 }
 
-message.team("brazil", "usa")
+// message.team("brazil", "usa")
 // message.normal("alguma coisa")
 
 

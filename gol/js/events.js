@@ -51,9 +51,6 @@ el_play.onclick = () =>{
     el_play.querySelector("img").src = "./imgs/icons/ball.svg";
     
     
-
-
-    // if(values.ear)
 }
 
 

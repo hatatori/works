@@ -71,20 +71,4 @@ let character = {
 
 character.init()
 
-// setTimeout(() => {
-    // character.animation.left();
-    // character.animation.leftup();
-    // character.animation.up();
-    // character.animation.right();
-    // character.animation.right();
-    // character.animation.leftup();
-    //   character.animation.right();
-// }, 1000);
-
-// el_ball_choice_left.onclick = () => character.animation.left();
-// el_ball_choice_leftup.onclick = () => character.animation.leftup();
-// el_ball_choice_up.onclick = () => character.animation.up();
-// el_ball_choice_right.onclick = () => character.animation.right();
-// el_ball_choice_rightup.onclick = () => character.animation.rightup();
-
 export default character;

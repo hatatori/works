@@ -19,6 +19,15 @@ let logic = {
     values.setTeam(values.team1, t1);
     message.team(values.team1, t1);
   },
+  
+  changeTeam2() {
+    let times = "argentina,brazil,france,germany,italy,netherlands,portugal,spain,usa".split(",");
+    times = times.filter((e) => e != values.team1);
+    // times = times.filter((e) => e != values.team2);
+    let t1 = times[(Math.random() * times.length) | 0];
+    values.setTeam2(t1);
+    // message.team(values.team1, t1);
+  },
 
   nogoal() {
     let directions = "left,leftup,up,rightup,right".split(",");
@@ -93,6 +102,10 @@ let logic = {
   },
 
   choice(a, b) {
+
+    if(this.canKick == false) return
+    this.canKick = false
+
     if (values.earns == 0) {
       message.normal("É necessário fazer uma aposta mínima.");
       return;
@@ -100,9 +113,15 @@ let logic = {
 
     sounds.whistle();
     ballwhite.position(b);
+
     setTimeout(() => {
       this.choice_character_ball(a, b);
     }, 1000);
+
+    setTimeout(() => {
+      this.canKick = true
+    }, 3000);
+
   },
 
   collect() {

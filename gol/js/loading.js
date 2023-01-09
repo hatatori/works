@@ -55,6 +55,7 @@ function loading(){
         img.src = i
         img.style.display = "none"
         document.body.appendChild(img)
+
         img.onload=function(){
             el_loading.innerHTML = (((++qt / list.length) * 100)|0)+"%";
 
@@ -63,6 +64,7 @@ function loading(){
               div.style.opacity = 0;
               setTimeout(()=>{div.remove()},1000)
             }
+            console.log(this.width)
 
             img.remove()
         }
