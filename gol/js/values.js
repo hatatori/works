@@ -1,7 +1,9 @@
+// import logic from './logic.js'
+
 let values = {
 
-  betvalue:20,
-  earns: 5,
+  betvalue: 1,
+  earns: 0,
   cash: 30,
   multlist: [ 1.9 , 2.7, 5.3, 7.5, 8.6, 11.2],
   mult: 0,
@@ -13,6 +15,10 @@ let values = {
   },
 
   setBetvalue(n) {
+
+    if(this.earns > 0)
+      return false
+
     if(n <= 1) n = 1;
 
     n = parseInt(n)
@@ -23,6 +29,7 @@ let values = {
     this.earns = n;
     el_earns.innerHTML = this.money(this.earns);
   },
+
   setCash(n) {
     this.cash = n;
     el_cash.innerHTML = this.money(this.cash);
@@ -49,10 +56,8 @@ let values = {
   },
 
   setProgress(n){
-
     if(this.mult > this.multlist.length-1)
       n = 0
-
     this.mult = n
     el_progress.style.width = (n / (this.multlist.length-1)) * 100 + 3 + "%";
   },

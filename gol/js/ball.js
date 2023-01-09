@@ -39,8 +39,6 @@ let ball = {
       ball.el.style.rotate = 400;
       ball.el.style.transform = "rotate(720deg)";
       ball.positionC(pos);
-      console.log(pos)
-      
       if (ball.pos.normal != pos) sounds.kick();
     },
 

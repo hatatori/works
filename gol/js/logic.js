@@ -7,26 +7,50 @@ import message from "./message.js";
 import sounds from "./sounds.js";
 import values from "./values.js";
 
-
 let logic = {
+  canKick: true,
+  canBet: true,
 
-  nogoal(){
-      let directions = "left,leftup,up,rightup,right".split(",");
-      let direction = directions[(Math.random() * directions.length) | 0];
-      ballwhite.position(direction);
-      this.choice(direction, direction);
+  changeTeam() {
+    let times = "argentina,brazil,france,germany,italy,netherlands,portugal,spain,usa".split(",");
+    times = times.filter((e) => e != values.team1);
+    times = times.filter((e) => e != values.team2);
+    let t1 = times[(Math.random() * times.length) | 0];
+    values.setTeam(values.team1, t1);
+    message.team(values.team1, t1);
   },
 
-  goal(){
-      let direction, directions, r, a, b;
-      directions = "left,leftup,up,rightup,right".split(",");
-      r = (Math.random() * directions.length) | 0;
-      a = directions[r];
-      directions = directions.filter((e, i) => i != r);
-      r = (Math.random() * directions.length) | 0;
-      b = directions[r];
-      ballwhite.position(b);
-      this.choice(a, b);
+  nogoal() {
+    let directions = "left,leftup,up,rightup,right".split(",");
+    let direction = directions[(Math.random() * directions.length) | 0];
+    ballwhite.position(direction);
+    this.choice(direction, direction);
+    // setTimeout(logic.changeTeam,2000);
+  },
+
+  goal() {
+    let direction, directions, r, a, b;
+    directions = "left,leftup,up,rightup,right".split(",");
+    r = (Math.random() * directions.length) | 0;
+    a = directions[r];
+    directions = directions.filter((e, i) => i != r);
+    r = (Math.random() * directions.length) | 0;
+    b = directions[r];
+    ballwhite.position(b);
+    this.choice(a, b);
+  },
+
+  goal_n(dir) {
+    let directions = "left,leftup,up,rightup,right".split(",");
+    directions = directions.filter((e) => e != dir);
+    let dir2 = directions[(Math.random() * directions.length) | 0];
+    ballwhite.position(b);
+    this.choice(dir2, dir);
+  },
+
+  nogoal_n(dir) {
+    ballwhite.position(dir);
+    this.choice(dir, dir);
   },
 
   choice_character_ball(character_direction, ball_direction) {
@@ -52,6 +76,10 @@ let logic = {
     } else {
       values.setProgress(0);
       values.setEarns(0);
+      el_play.querySelector("img").src = "./imgs/icons/play.svg";
+
+      // logic.changeTeam()
+      setTimeout(logic.changeTeam, 1500);
     }
 
     // character.animation.leftup();
@@ -65,12 +93,33 @@ let logic = {
   },
 
   choice(a, b) {
+    if (values.earns == 0) {
+      message.normal("É necessário fazer uma aposta mínima.");
+      return;
+    }
+
     sounds.whistle();
     ballwhite.position(b);
     setTimeout(() => {
       this.choice_character_ball(a, b);
     }, 1000);
+  },
+
+  collect() {
+    values.setCash(values.cash + values.earns);
+    values.setEarns(0);
+    el_play.querySelector('img').src = "./imgs/icons/play.svg";
+  },
+
+  choiceRandom(){
+    let directions = "left,leftup,up,rightup,right".split(",");
+    let direction1 = directions[(Math.random() * directions.length) | 0];
+    let direction2 = directions[(Math.random() * directions.length) | 0];
+    this.choice(direction1, direction2);
   }
-}
+
+};
+
+// setTimeout(()=>logic.nogoal("left"), 2000);
 
 export default logic

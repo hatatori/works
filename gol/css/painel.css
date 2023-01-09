@@ -94,3 +94,13 @@
   /* background-color: red; */
   /* padding: 10px; */
 }
+
+/* #el_play:hover{
+  scale: 1.1;
+  cursor: pointer;
+} */
+
+.painel .center:hover{
+  scale: 1.1;
+  cursor: pointer;
+}
