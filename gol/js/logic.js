@@ -19,7 +19,7 @@ let logic = {
     values.setTeam(values.team1, t1);
     message.team(values.team1, t1);
   },
-  
+
   changeTeam2() {
     let times = "argentina,brazil,france,germany,italy,netherlands,portugal,spain,usa".split(",");
     times = times.filter((e) => e != values.team1);
@@ -81,14 +81,14 @@ let logic = {
         values.setEarns(values.earns * values.multlist[values.mult]);
         values.setProgress(++values.mult);
         sounds.cheering();
+        this.canKick = true;
       }, 500);
     } else {
       values.setProgress(0);
       values.setEarns(0);
       el_play.querySelector("img").src = "./imgs/icons/play.svg";
-
-      // logic.changeTeam()
       setTimeout(logic.changeTeam, 1500);
+      this.canKick = true;
     }
 
     // character.animation.leftup();
@@ -128,6 +128,10 @@ let logic = {
     values.setCash(values.cash + values.earns);
     values.setEarns(0);
     el_play.querySelector('img').src = "./imgs/icons/play.svg";
+    logic.changeTeam2()
+    message.team(values.team1, values.team2);
+    // console.log('ok')
+    
   },
 
   choiceRandom(){
@@ -135,6 +139,7 @@ let logic = {
     let direction1 = directions[(Math.random() * directions.length) | 0];
     let direction2 = directions[(Math.random() * directions.length) | 0];
     this.choice(direction1, direction2);
+    
   }
 
 };

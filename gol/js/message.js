@@ -86,6 +86,7 @@ let message = {
   }
 }
 
+// message.team(values.team1, values.team2)
 // message.team("brazil", "usa")
 // message.normal("alguma coisa")
 

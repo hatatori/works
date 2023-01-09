@@ -53,7 +53,6 @@ el_play.onclick = () =>{
     
 }
 
-
 // el_ball_choice_right.onclick = () => {
 //   character.animation.right()
 //   if (character.state == 'right') ball.animation.rightout();
