@@ -49,6 +49,10 @@ let values = {
   },
 
   setProgress(n){
+
+    if(this.mult > this.multlist.length-1)
+      n = 0
+
     this.mult = n
     el_progress.style.width = (n / (this.multlist.length-1)) * 100 + 3 + "%";
   },

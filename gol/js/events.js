@@ -1,17 +1,24 @@
 import ball from "./ball.js";
 import ballwhite from "./ballwhite.js";
 import character from "./character.js";
+import logic from "./logic.js";
 import message from "./message.js";
 import sounds from "./sounds.js";
 import values from "./values.js";
 
 let events = {};
 
-// el_ball_choice_left.onclick = () => {
-//   character.animation.left()
-//   if (character.state == 'left') ball.animation.leftout();
-//   else ball.animation.left();
-// }
+function direction_random(){
+    let directions = "left,leftup,up,rightup,right".split(",");
+    let direction = directions[(Math.random() * directions.length) | 0]
+    return direction
+}
+
+el_ball_choice_left.onclick = () => { logic.choice(direction_random(), "left"); }
+el_ball_choice_leftup.onclick = () => { logic.choice(direction_random(), "leftup"); }
+el_ball_choice_up.onclick = () => { logic.choice(direction_random(), "up"); }
+el_ball_choice_rightup.onclick = () => { logic.choice(direction_random(), "rightup"); }
+el_ball_choice_right.onclick = () => { logic.choice(direction_random(), "right"); }
 
 // el_ball_choice_right.onclick = () => {
 //   character.animation.right()
