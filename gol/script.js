@@ -1,3 +1,4 @@
+import loading from './js/loading.js'
 import ball from './js/ball.js'
 import ballwhite from "./js/ballwhite.js";
 import character from './js/character.js'
@@ -7,11 +8,11 @@ import sounds from "./js/sounds.js";
 import values from "./js/values.js";
 
 sounds.music()
+sounds.crowd()
 
 function choice_character_ball(character_direction, ball_direction){
 
     // sounds.whistle();
-    
     
     let directions = "left,leftup,up,rightup,right".split(",")
 
@@ -28,6 +29,7 @@ function choice_character_ball(character_direction, ball_direction){
             message.mult("x"+values.multlist[values.mult], ball_direction);
             values.setEarns(values.earns * values.multlist[values.mult]);
             values.setProgress(++values.mult)
+            sounds.cheering()
         },500)
     }else{
         values.setProgress(0);
@@ -74,12 +76,19 @@ window.onkeyup = e => {
     // if(e.key == "2") choice('rightup', 'rightup');
 
     if (e.key == "1") {
-        let directions = "left,leftup,up,rightup,right".split(",");
-        let direction1 = directions[(Math.random() * directions.length) | 0];
-        directions = directions.filter((e) => e != directions.indexOf(direction1));
-        let direction2 = directions[(Math.random() * directions.length) | 0];
-        ballwhite.position(direction2);
-        choice(direction1, direction2);
+
+        let direction, directions, r, a, b;
+
+        directions = "left,leftup,up,rightup,right".split(",");
+        r = (Math.random() * directions.length) | 0;
+        a = directions[r];
+
+        directions = directions.filter((e, i) => i != r);
+        r = (Math.random() * directions.length) | 0;
+        b = directions[r];
+
+        ballwhite.position(b);
+        choice(a, b);
     }
 
     // errar

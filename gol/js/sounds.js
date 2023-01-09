@@ -11,11 +11,12 @@ let sounds = {
     // this.play("skeletons.mp3"); 
     let aud = new Audio(`./sounds/skeletons.mp3`);
     aud.play();
-    aud.volume = 0.3
+    aud.volume = 0.4
     aud.loop = true
   },
-  crowd(){ this.play("skeletons.mp3"); },
-  whistle(){ this.play("whistle.mp3"); }
+  crowd(){ this.play("crowd.mp3"); },
+  whistle(){ this.play("whistle.mp3"); },
+  cheering(){ this.play("cheering.mp3"); }
 }
 
 export default sounds

@@ -59,7 +59,7 @@ let ball = {
     normal() {
       // if (character.decision == "normal") this.upout();
       this.kick(ball.pos.normal);
-      ball.el.style.scale = 1
+      ball.el.style.scale = 0.9
       ball.el.style.transform = ""
     },
     

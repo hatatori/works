@@ -58,6 +58,7 @@
   border-radius: 30px;
   width: 30%;
   transition: 0.5s;
+  max-width: 100%;
 }
 
 .hud_top .barra .text{

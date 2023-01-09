@@ -49,7 +49,7 @@ let message = {
     el_campo.appendChild(div);
 
     setTimeout((e) => {
-      // div.remove();
+      div.remove();
     }, 3000);
   }
 }

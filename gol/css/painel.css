@@ -21,6 +21,13 @@
   align-items: center;
   height: 30px  ;
   gap: 20px;
+  flex: 1;
+}
+
+.painel .maior{
+  /* flex: 2; */
+  width: 500px;
+  /* background-color: red; */
 }
 
 .painel .inp{
@@ -31,6 +38,9 @@
   border-radius: 30px;
   font-weight: bold;
   width: 200px;
+  width: calc(200px - 5vw);
+  white-space: pre;
+  /* overflow: hidden; */
 }
 
 .painel .circle{
