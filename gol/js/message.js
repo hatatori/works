@@ -21,32 +21,42 @@ let message = {
 
   mult(msg, position){
     let div = document.createElement("div");
-    div.style.position = "absolute"
-    div.className = "msg"
+    div.style.position = "absolute";
+    div.className = "msg";
 
     let x = 0;
     let y = 0;
 
-    if(position == "left") [x,y] = [19, 43]
-    if(position == "leftup") [x,y] = [19, 73]
-    if(position == "up") [x,y] = [43.5, 73]
-    if(position == "rightup") [x,y] = [69, 73]
-    if(position == "right") [x,y] = [69, 43]
+    if (position == "left") [x, y] = [23.5, 42];
+    if (position == "leftup") [x, y] = [23.5, 71];
+    if (position == "up") [x, y] = [50, 71];
+    if (position == "rightup") [x, y] = [76.5, 71];
+    if (position == "right") [x, y] = [76.5, 42];
 
     div.style.left = x+"%";
     div.style.bottom = y+"%";
+    div.style.translate = "-45px";
+
+    // div.style.left = "auto";
+    // div.style.top = "auto";
+    // div.style.bottom = "auto";
+    // div.style.right = "auto";
+
 
     div.innerHTML = `<div class="msg message-show-in-out">${msg}</div>`;
+    // div.innerHTML = `<div class="msg">${msg}</div>`;
 
     el_campo.appendChild(div);
 
     setTimeout((e) => {
-      div.remove();
+      // div.remove();
     }, 3000);
   }
 }
 
-message.team("usa", "brazil")
+message.team("brazil", "usa")
+
+
 
 
 // message.mult("13.3x", "left");

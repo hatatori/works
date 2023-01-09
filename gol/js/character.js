@@ -11,10 +11,10 @@ let character = {
 
   pos: {
     normal: { x: 0, y: 10 },
-    left: { x: -40, y: 0 },
-    leftup: { x: -40, y: -35 },
-    right: { x: 40, y: 0 },
-    rightup: { x: 40, y: -35 },
+    left: { x: -50, y: 0 },
+    leftup: { x: -50, y: -35 },
+    right: { x: 50, y: 0 },
+    rightup: { x: 50, y: -35 },
     up: { x: 0, y: -8 },
   },
 

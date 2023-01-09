@@ -2,27 +2,22 @@ import sounds from "./sounds.js";
 import character from './character.js'
 
 let ball = {
+
   el: el_ball,
+  same:false,
 
   pos: {
-
     normal: { x: -150, y: 200 },
-    
-    up: { x: 0, y: -100 },
+    up: { x: 0, y: -91 },
     upout: { x: 0, y: -200 },
-    
-    left: { x: -257, y: 70 },
+    left: { x: -265, y: 72 },
     leftout: { x: -420, y: 10 },
-    
-    leftup: { x: -257, y: -100 },
+    leftup: { x: -265, y: -91 },
     leftupout: { x: -357, y: -200 },
-
-    right: { x: 257, y: 70 },
+    right: { x: 265, y: 72 },
     rightout: { x: 357, y: 10 },
-
-    rightup: { x: 257, y: -100 },
+    rightup: { x: 265, y: -91 },
     rightupout: { x: 357, y: -100 },
-
   },
 
   position(x, y) {
@@ -39,13 +34,13 @@ let ball = {
   },
 
   animation: {
-    
     kick(pos) {
       ball.el.style.scale = 0.4;
       ball.el.style.rotate = 400;
       ball.el.style.transform = "rotate(720deg)";
       ball.positionC(pos);
       console.log(pos)
+      
       if (ball.pos.normal != pos) sounds.kick();
     },
 
@@ -54,6 +49,7 @@ let ball = {
       ball.el.style.rotate = 400;
       ball.el.style.transform = "rotate(720deg)";
       ball.positionC(pos1);
+      
       setTimeout(() => {
         ball.positionC(pos2);
         sounds.kick2()

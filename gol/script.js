@@ -11,13 +11,16 @@ sounds.music()
 function choice_character_ball(character_direction, ball_direction){
 
     // sounds.whistle();
-    // ballwhite.position(ball_direction);
+    
     
     let directions = "left,leftup,up,rightup,right".split(",")
+
+    character.decision = character_direction;
+    setTimeout(()=>{
+        character.animation[character_direction] ()
+    },150)
     
-    
-    character.animation[character_direction] ()
-    ball.animation[ball_direction]()
+    ball.animation[ball_direction]();
         
     if(character_direction != ball_direction){
         setTimeout(()=>{
@@ -38,12 +41,13 @@ function choice_character_ball(character_direction, ball_direction){
         character.animation.normal();
         ball.animation.normal();
         ballwhite.showall();
-    },2000)
+    },1500)
+
 }
 
 function choice(a,b){
     sounds.whistle();
-    ballwhite.position(b);
+    // ballwhite.position(b);
     setTimeout(()=>{choice_character_ball(a, b)},1000)
 }
 
@@ -57,10 +61,37 @@ function choice(a,b){
 // }
 
 window.onkeyup = e => {
-    if(e.key == " "){
+    // if(e.key == "'"){
+        // let directions = "left,leftup,up,rightup,right".split(",");
+        // let a = directions[parseInt(Math.random() * 5)];
+        // let b = directions[parseInt(Math.random() * 5)];
+        // choice(a, b);
+        // ballwhite.position(b);
+        // choice('left', 'left');
+    // }
+
+    // if(e.key == "1") choice('up', 'rightup');
+    // if(e.key == "2") choice('rightup', 'rightup');
+
+    if (e.key == "1") {
         let directions = "left,leftup,up,rightup,right".split(",");
-        let a = directions[parseInt(Math.random() * 5)];
-        let b = directions[parseInt(Math.random() * 5)];
-        choice(a, b);
+        let direction1 = directions[(Math.random() * directions.length) | 0];
+        directions = directions.filter((e) => e != directions.indexOf(direction1));
+        let direction2 = directions[(Math.random() * directions.length) | 0];
+        ballwhite.position(direction2);
+        choice(direction1, direction2);
     }
+
+    // errar
+    if (e.key == "2") {
+      let directions = "left,leftup,up,rightup,right".split(",");
+      let direction = directions[(Math.random() * directions.length) | 0];
+      ballwhite.position(direction);
+      choice(direction, direction);
+    }
+
+
+
+
+
 }

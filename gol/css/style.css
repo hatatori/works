@@ -24,6 +24,7 @@ body{
     align-items: center;
     background-color: black;
     height: 100vh;
+    background-color: red;
 }
 
 .center-transform{

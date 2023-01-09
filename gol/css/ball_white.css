@@ -4,6 +4,7 @@
   animation: rotation infinite 5s linear;
   transition: 0.5s;
   cursor: pointer;
+  width: 7%;
 }
 
 .ball_white:hover{
@@ -17,7 +18,7 @@
 
 #el_ball_choice_left{
   left: 20%;
-  bottom: 30%;
+  bottom: 31%;
 }
 #el_ball_choice_leftup{
   left: 20%;
@@ -28,7 +29,7 @@
 }
 #el_ball_choice_right{
   right: 20%;
-  bottom: 30%;
+  bottom: 31%;
 }
 #el_ball_choice_rightup{
 right: 20%;
