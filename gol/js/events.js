@@ -9,6 +9,7 @@ import values from "./values.js";
 let events = {};
 
 function direction_random(){
+
     let directions = "left,leftup,up,rightup,right".split(",");
     let direction = directions[(Math.random() * directions.length) | 0]
     return direction

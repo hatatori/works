@@ -26,7 +26,7 @@ let logic = {
     // times = times.filter((e) => e != values.team2);
     let t1 = times[(Math.random() * times.length) | 0];
     values.setTeam2(t1);
-    // message.team(values.team1, t1);
+    message.team(values.team1, t1);
   },
 
   nogoal() {
@@ -98,18 +98,25 @@ let logic = {
       character.animation.normal();
       ball.animation.normal();
       ballwhite.showall();
+      
+      if(values.mult == 0)
+        logic.changeTeam2()
+
     }, 1500);
   },
 
   choice(a, b) {
 
-    if(this.canKick == false) return
-    this.canKick = false
+
 
     if (values.earns == 0) {
       message.normal("É necessário fazer uma aposta mínima.");
       return;
     }
+
+    if(this.canKick == false) return
+    this.canKick = false
+
 
     sounds.whistle();
     ballwhite.position(b);
@@ -130,8 +137,6 @@ let logic = {
     el_play.querySelector('img').src = "./imgs/icons/play.svg";
     logic.changeTeam2()
     message.team(values.team1, values.team2);
-    // console.log('ok')
-    
   },
 
   choiceRandom(){

@@ -64,7 +64,6 @@ function loading(){
               div.style.opacity = 0;
               setTimeout(()=>{div.remove()},1000)
             }
-            console.log(this.width)
 
             img.remove()
         }

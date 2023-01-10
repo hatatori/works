@@ -1,4 +1,5 @@
 let ballwhite = {
+  
   balls: document.querySelectorAll(".ball_white"),
 
   hideall(){

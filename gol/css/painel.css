@@ -11,6 +11,7 @@
   gap: 10px;
   padding: 0 20px;
   /* background-color: red; */
+  z-index: 4;
 }
 
 .painel > div{

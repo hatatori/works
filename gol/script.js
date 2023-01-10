@@ -9,7 +9,6 @@ import values from "./js/values.js";
 import logic from './js/logic.js';
 import team from "./js/team.js";
 
-
 // window.onclick=()=> {
 //     let directions = "left,leftup,up,rightup,right".split(",");
 //     let a = directions[parseInt(Math.random() * 5)];

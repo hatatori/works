@@ -9,6 +9,7 @@
     background-color: black;
     /* display: none; */
     transition: 0.5s;
+    background-size: cover;
 }
 
 .selection img{
