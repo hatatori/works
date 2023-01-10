@@ -14,7 +14,11 @@ let sounds = {
     aud.volume = 0.4
     aud.loop = true
   },
-  crowd(){ this.play("crowd.mp3"); },
+  crowd(){ 
+    let aud = new Audio(`./sounds/crowd.mp3`);
+    aud.play();
+    aud.loop = true;
+  },
   whistle(){ this.play("whistle.mp3"); },
   cheering(){ this.play("cheering.mp3"); }
 }

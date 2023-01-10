@@ -99,8 +99,10 @@ let logic = {
       ball.animation.normal();
       ballwhite.showall();
       
-      if(values.mult == 0)
+      if(values.mult == 0){
         logic.changeTeam2()
+        el_play.querySelector("img").src = "./imgs/icons/play.svg";
+      }
 
     }, 1500);
   },
@@ -132,11 +134,13 @@ let logic = {
   },
 
   collect() {
+    if(values.earns == 0 || values.mult < 1) return
     values.setCash(values.cash + values.earns);
     values.setEarns(0);
     el_play.querySelector('img').src = "./imgs/icons/play.svg";
     logic.changeTeam2()
     message.team(values.team1, values.team2);
+    values.setProgress(0)
   },
 
   choiceRandom(){
