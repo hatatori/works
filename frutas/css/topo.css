@@ -1,0 +1,36 @@
+.topo{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  z-index: 3;
+  gap: 1em;
+}
+
+.topo div{
+  background-color: red;
+  padding: 5px 1em;
+  background: linear-gradient(#b76725, #ae4210);
+  border: #EDC453 3px solid;
+  border-radius: 5px;
+  font-size: .75em;
+  width: 150px;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.topo--mid{
+  background: #000000bb;
+  display: flex;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  border-radius: 5px;
+  color: white;
+  border: solid 3px #00bcd4;
+  font-size: 0.9em;
+}
+
+.topo--left{text-align: left;}
+.topo--right{text-align: right;}

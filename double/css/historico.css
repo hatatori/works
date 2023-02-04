@@ -1,0 +1,19 @@
+.historico {
+  background-color: var(--purple-3);
+  /* padding: 1em; */
+  display: flex;
+  gap: 10px;
+  border-top: dashed 1px gray;
+  padding: 1em;
+  border-radius: 0 0 5px 5px;
+  overflow-x: hidden;
+}
+
+.historico button {
+  flex: none;
+}
+
+.historico button:nth-child(1){
+  box-shadow: 0 0 0 3px white;
+  scale: 1.1;
+}

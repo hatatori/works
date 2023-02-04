@@ -1,0 +1,47 @@
+.btn {
+  padding: 0px;
+  /* padding: 0.3em 1em; */
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.btn-white {
+  background-color: var(--white-1);
+  color: var(--white-2);
+}
+
+.btn-green {
+  background-color: var(--green-1);
+}
+.btn-blue {
+  background-color: var(--blue-2);
+}
+
+/* parte 2 */
+.btn-outline {
+  background-color: transparent;
+  padding: 5px 20px;
+  font-weight: bold;
+}
+
+.btn-outline-green {
+  color: var(--green-1);
+}
+
+.btn-outline-blue {
+  color: var(--blue-1);
+}
+
+.btn-outline-white {
+  color: var(--white-1);
+}
+
+.btn-active {
+  /* box-shadow: 0px 0px 0px 3px var(--white-1); */
+  box-shadow: 0px 0px 0px 3px var(--green-1);
+}
+
+.btn-outline:hover {
+  background-color: var(--purple-1);
+}

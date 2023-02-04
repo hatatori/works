@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import "./css/variables.css";
+@import "./css/card.css";
+@import "./css/bloco.css";
+@import "./css/hud.css";
+@import "./css/button.css";
+@import "./css/historico.css";
+@import "./css/aguardar.css";
+@import "./css/escolha.css";
+@import "./css/seta.css";
+@import "./css/pages.css";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: var(--purple-2);
+}
+
+header {
+  background-color: var(--purple-2);
+  padding: 1em;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1em;
+}
+
+main {
+  width: 700px;
+  max-width: 90%;
+  margin: auto;
+  color: white;
+}
+
+/* section { */
+/* margin: 1em 0; */
+/* } */
+
+button,
+input {
+  background-color: var(--pink);
+  border-radius: 5px;
+  color: white;
+  border: none;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  font-size: large;
+}
+
+input {
+  background-color: var(--purple-1);
+  outline: none;
+  text-align: center;
+}
+
+.t-left{text-align: left;}
+.t-right{text-align: right;}

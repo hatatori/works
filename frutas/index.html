@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- <button onclick="n=0;go()">ok</button> -->
+    <main>
+      <!-- <section>
+        <button onclick="game.escolha(parseInt(Math.random()*24+1))">Aleatório</button>
+        <button onclick="game.escolha(5)">Maçã</button>
+        <button onclick="game.escolha(13)">Laranja</button>
+        <button onclick="game.escolha(20)">Estrela 3x</button>
+      </section> -->
+
+      <section id="topo" class="topo">
+        <div id="topoa" class="topo--left">R$ 10,00</div>
+        <div id="topob" class="topo--right">R$ 20,00</div>
+      </section>
+
+      <section id="squares" class="square" nome="computador">
+        <div fruta="laranja" data="laranja" class="square_block"><img src="./assets/laranja.png" /></div>
+        <div fruta="sino" data="sino" class="square_block"><img src="./assets/sino.png" /></div>
+        <div fruta="barbarbar" data="bar50x" class="square_block"><img src="./assets/bar50x.png" /></div>
+        <div fruta="barbarbar" data="barbarbar" class="square_block"><img src="./assets/barbarbar.png" /></div>
+        <div fruta="maca" data="maca" class="square_block"><img src="./assets/maca.png" /></div>
+        <div fruta="maca" data="maca3x" class="square_block"><img src="./assets/maca3x.png" /></div>
+        <div fruta="limao" data="limao" class="square_block"><img src="./assets/limao.png" /></div>
+        <div fruta="melancia" data="melancia" class="square_block col-7"><img src="./assets/melancia.png" /></div>
+        <div fruta="melancia" data="melancia3x" class="square_block col-7"><img src="./assets/melancia3x.png" /></div>
+        <div fruta="lucky" data="lucky" class="square_block col-7"><img src="./assets/lucky.png" /></div>
+        <div fruta="maca" data="maca" class="square_block col-7"><img src="./assets/maca.png" /></div>
+        <div fruta="limao" data="limao3x" class="square_block col-7"><img src="./assets/limao3x.png" /></div>
+        <div fruta="laranja" data="laranja" class="square_block col-7"><img src="./assets/laranja.png" /></div>
+        <div fruta="sino" data="sino" class="square_block row-7 col-6"><img src="./assets/sino.png" /></div>
+        <div fruta="seven" data="seven3x" class="square_block row-7 col-5"><img src="./assets/seven3x.png" /></div>
+        <div fruta="seven" data="seven" class="square_block row-7 col-4"><img src="./assets/seven.png" /></div>
+        <div fruta="maca" data="maca" class="square_block row-7 col-3"><img src="./assets/maca.png" /></div>
+        <div fruta="limao" data="limao3x" class="square_block row-7 col-2"><img src="./assets/limao3x.png" /></div>
+        <div fruta="limao" data="limao" class="square_block row-7 col-1"><img src="./assets/limao.png" /></div>
+        <div fruta="estrela" data="estrela3x" class="square_block row-6"><img src="./assets/estrela3x.png" /></div>
+        <div fruta="estrela" data="estrela" class="square_block row-5"><img src="./assets/estrela.png" /></div>
+        <div fruta="lucky" data="lucky" class="square_block row-4"><img src="./assets/lucky.png" /></div>
+        <div fruta="maca" data="maca" class="square_block row-3"><img src="./assets/maca.png" /></div>
+        <div fruta="sino" data="sino" class="square_block row-2"><img src="./assets/sino.png" /></div>
+        <!-- <div class="square_block--big"></div> -->
+        <span id="div_placa" class="topo--mid col-4 row-6">0</span>
+      </section>
+
+      <!-- <button class="btn btn--green">Play</button> -->
+
+      <!-- botões frutas -->
+      <section class="group2" id="group2">
+        <div id="btn_barbarbar" class="square--gold">
+          <p id="p_barbarbar">1</p>
+          <img width="35px" src="./assets/barbarbar.png" />
+          <p>R$ 120</p>
+        </div>
+        <div id="btn_seven" class="square--gold">
+          <p id="p_seven">2</p>
+          <img width="35px" src="./assets/seven.png" />
+          <p>R$ 40</p>
+        </div>
+        <div id="btn_estrela" class="square--gold">
+          <p id="p_estrela">5</p>
+          <img width="35px" src="./assets/estrela.png" />
+          <p>R$ 30</p>
+        </div>
+        <div id="btn_melancia" class="square--gold">
+          <p id="p_melancia">2</p>
+          <img width="35px" src="./assets/melancia.png" />
+          <p>R$ 20</p>
+        </div>
+        <div id="btn_sino" class="square--gold">
+          <p id="p_sino">10</p>
+          <img width="35px" src="./assets/sino.png" />
+          <p>R$ 20</p>
+        </div>
+        <div id="btn_limao" class="square--gold">
+          <p id="p_limao">0</p>
+          <img width="35px" src="./assets/limao.png" />
+          <p>R$ 15</p>
+        </div>
+        <div id="btn_laranja" class="square--gold">
+          <p id="p_laranja">0</p>
+          <img width="35px" src="./assets/laranja.png" />
+          <p>R$ 15</p>
+        </div>
+        <div id="btn_maca" class="square--gold">
+          <p id="p_maca">0</p>
+          <img width="35px" src="./assets/maca.png" />
+          <p>R$ 5</p>
+        </div>
+      </section>
+
+      <!-- painel valores -->
+      <section class="painel">
+        <div id="p_somatotal" name="Soma Total" class="square--gold">R$ 0,00</div>
+        <div id="bt_play" class="btn btn--green">Play</div>
+        <div name="Aposta base" class="square--gold square--gold--flex">
+          <span id="bt_less">-</span>
+          <div class="square--center"><p id="p_aposta_base">R$10,00</p></div>
+          <span id="bt_plus">+</span>
+        </div>
+        <div id="bt_zerar" class="square--gold">Zerar</div>
+      </section>
+
+      <!-- menu -->
+      <section style="display: flex; gap: 1em; justify-content: center">
+        <div id="bt_to_left" class="square--gold"><img height="30px" src="assets/styles/arrow_left.svg" /></div>
+        <div id="bt_group_1" class="square--gold">1-7</div>
+        <div id="bt_group_2" class="square--gold">8-14</div>
+        <div id="bt_to_right" class="square--gold"><img height="30px" src="assets/styles/arrow_right.svg" /></div>
+      </section>
+
+      <section id="s_message" class="message">
+        <p>Alguma coisa</p>
+        <div>
+          <img src="./assets/styles/youwin.png" />
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

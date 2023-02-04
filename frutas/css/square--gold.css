@@ -1,0 +1,53 @@
+.group2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 10px;
+}
+
+.square--gold{
+  background:linear-gradient(#FFD649, #FCA82E);
+  display: grid;
+  justify-items: center;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #B83F00;
+  padding: 0.8em 0.5em;
+  cursor: pointer;
+  font-size: .8em;
+  align-items: center;
+  position: relative;
+}
+
+.square--gold::after{
+  content:attr(name);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  text-align: center;
+  margin: auto;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.square--gold:hover{
+  background:linear-gradient(#FCA82E, #FFD649);
+}
+
+.square--gold p{
+  font-size: .9em;
+  list-style: 50px
+}
+
+.square--gold p:nth-child(2){
+  font-size: 10px;
+}
+
+.square--gold--flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.square--gold--flex *{
+  padding: 0 0.6em ;
+}
