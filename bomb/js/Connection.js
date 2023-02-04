@@ -37,6 +37,7 @@ let Connection = {
     // })
 
 
+
     this.headers = {
       'Accept': 'application/json',
       "Content-type": "application/json; charset=UTF-8",
@@ -47,7 +48,12 @@ let Connection = {
       method: 'POST',
       headers: this.headers,
     })
-    .then(e=>e.json())
+    .then(e=>{
+      // console.log(e.status)
+      this.check_connection(e.status)
+
+      return e.json()
+    })
 
     .then(e=> {
 
@@ -179,14 +185,18 @@ let Connection = {
   },
 
   check_connection(num){
+    
+    if(num.status == "error") Message("Algo saiu errado")
 
     let msg = {
+      500: "404 - Algo deu errado",
       404: "404 - não encontrado",
       403: "403 - Algo deu errado, sessão expirou",
       401: "401 - Algo deu errado, sessão expirou",
     }
-
-    if(Object.keys(msg).includes(num.toString())) Message(msg[num])
+    
+    if(Object.keys(msg).includes(num.toString())) 
+      Message(msg[num])
   }
 }
 
