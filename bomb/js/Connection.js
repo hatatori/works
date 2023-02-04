@@ -36,7 +36,6 @@ let Connection = {
     //   }
     // })
 
-    console.log(this.token)
 
     this.headers = {
       'Accept': 'application/json',
