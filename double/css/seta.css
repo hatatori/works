@@ -8,7 +8,12 @@
   border: solid 10px transparent;
   z-index: 2;
   border-top: solid 10px white;
+
+  left: 50%;
+  transform: translate(-50%);
+
 }
+
 .seta::after {
   content: "";
   width: 1px;

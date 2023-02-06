@@ -1,12 +1,26 @@
 import Money from "./money.js";
 
 let stats = {
+  id:0,
+  name: "Renato",
   wallet: 1000,
   betValue: 100,
-  choice: 2,
+  choice: 2, // 3 botões botão
   gameover: false,
   buttonText: "Apostar",
   canBet: true,
+  crown: 0,
+  color: 2,
+
+  setId(id){ this.id = id }, 
+
+  setCrown(val){
+    this.crow = val
+  }, 
+
+  setName(val){
+    this.name = val
+  },
 
   setCanBet(bool) {
     this.canBet = bool;

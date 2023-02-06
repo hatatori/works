@@ -24,6 +24,9 @@
     flex: 1;
 }
 
+.page-win td{ color: var(--green-1); }
+.page-lose td{ color: var(--pink); }
+
 .page table{
     /* width: 300px; */
     background-color: var(--purple-2);
