@@ -285,10 +285,20 @@ socket.on('connect', () => {
 
     // const doubleGame = DoubleGame()
     socket.on('registerCallback', msg=>{
+        console.log(msg)
+
         stats.setWallet(msg.balance)
         stats.setName(msg.username)
         stats.setId(msg.id)
-      
+
+        // if(msg.username)
+
+        let user_active_table = table.lista.filter(e=>e.name == e.username).length
+
+        if(user_active_table){
+            button.setButton("Apostou")
+        }
+
     })
 
     socket.on('double.tick', tik=>{
