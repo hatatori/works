@@ -10,7 +10,7 @@
     <script src="https://cdn.socket.io/4.5.4/socket.io.min.js" integrity="sha384-/KNQL8Nu5gCHLqwqfQjA689Hhoqgi2S84SNUxC3roTe4EhJ9AfLkp8QiQcU8AMzI" crossorigin="anonymous"></script>
     <!-- <script src="/socket.io/socket.io.js"></script> -->
     
-    
+
     <link rel="stylesheet" href="style.css" />
 
     <!-- <script src="utils.js"></script> -->
@@ -23,67 +23,74 @@
         <img height="30px" src="./imgs/wallet.svg" />
       </header>
 
-      <section class="bloco" id="bloco">
-        <div class="seta"></div>
+      <section class="hud-menu">
+        <section class="hud-menu-left">
+          <section class="bloco" id="bloco">
+            <div class="seta"></div>
 
-        <div id="div_aguardar" class="aguardar">
-          <p>Aguarde</p>
-          <div>
-            <div id="bar_pink" class="bar-pink"></div>
-          </div>
-        </div>
+            <div id="div_aguardar" class="aguardar">
+              <p>Aguarde</p>
+              <div>
+                <div id="bar_pink" class="bar-pink"></div>
+              </div>
+            </div>
 
-        <div class="cards" id="div_cards">
-          <div id="cards_in"></div>
-          <!-- <div class="card card--green"> <p>1</p> </div> -->
-        </div>
+            <div class="cards" id="div_cards">
+              <div id="cards_in"></div>
+              <!-- <div class="card card--green"> <p>1</p> </div> -->
+            </div>
+          </section>
+
+          <section id="div_historico" class="historico">
+            <!-- <button class="btn btn-green">1</button> -->
+            <!-- <button class="btn btn-green">1</button> -->
+            
+            <!-- <button v-for="item in historic.list" class="btn btn-green">{{item}}</button> -->
+            <!-- <button v-for="item in list" v-bind:class="ok" class="btn btn-green">{{item < 3 ? 'a' : 'b'}}</button> -->
+            <button 
+            v-for="item in list"
+            class="btn" 
+            v-bind:class=" item == 0 ? 'btn-white' :  item % 2 == 0 ? 'btn-green' : 'btn-blue' " 
+            >
+            {{item}}
+            </button>
+
+            <!-- <button class="btn btn-green">1</button> -->
+            <!-- <button class="btn btn-blue">2</button> -->
+            <!-- <button class="btn btn-white">3</button> -->
+          </section>
+        </section>
+
+        <section class="hud-menu-right">
+          <section class="escolha">
+            <button
+              id="btn_escolha_1"
+              class="btn btn-green"
+            >
+              2x
+            </button>
+            <button id="btn_escolha_2" class="btn btn-white">
+              14x
+            </button>
+            <button id="btn_escolha_3" class="btn btn-blue">
+              2x
+            </button>
+          </section>
+
+          <section class="hud">
+            <button id="btn_half" class="btn btn-pink-outline btn_half">1/2</button>
+            <button id="btn_double" class="btn btn-pink-outline btn_double">x2</button>
+            
+            <label for="inp_betvalue" class="input input-dark">
+              <input disabled id="inp_betvalue" class="inp_betvalue" value="R$ 200,00" />
+            </label>
+
+
+            <button id="btn_apostar" class="btn_apostar btn btn-pink">Apostar</button>
+          </section>
+        </section>
       </section>
 
-      <section id="div_historico" class="historico">
-        <!-- <button class="btn btn-green">1</button> -->
-        <!-- <button class="btn btn-green">1</button> -->
-        
-        <!-- <button v-for="item in historic.list" class="btn btn-green">{{item}}</button> -->
-        <!-- <button v-for="item in list" v-bind:class="ok" class="btn btn-green">{{item < 3 ? 'a' : 'b'}}</button> -->
-        <button 
-        v-for="item in list"
-        class="btn" 
-        v-bind:class=" item == 0 ? 'btn-white' :  item % 2 == 0 ? 'btn-green' : 'btn-blue' " 
-        >
-        {{item}}
-        </button>
-
-        <!-- <button class="btn btn-green">1</button> -->
-        <!-- <button class="btn btn-blue">2</button> -->
-        <!-- <button class="btn btn-white">3</button> -->
-      </section>
-
-      <section class="escolha">
-        <button
-          id="btn_escolha_1"
-          class="btn-outline btn-outline-green btn-active"
-        >
-          2x
-        </button>
-        <button id="btn_escolha_2" class="btn-outline btn-outline-white">
-          14x
-        </button>
-        <button id="btn_escolha_3" class="btn-outline btn-outline-blue">
-          2x
-        </button>
-      </section>
-
-      <section class="hud">
-        <button id="btn_half" class="btn_half">1/2</button>
-        <input
-          disabled
-          id="inp_betvalue"
-          class="inp_betvalue"
-          value="R$ 200,00"
-        />
-        <button id="btn_double" class="btn_double">x2</button>
-        <button id="btn_apostar" class="btn_apostar">Apostar</button>
-      </section>
     </main>
 
     <!-- inicio vue -->

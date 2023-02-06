@@ -10,6 +10,9 @@
 @import "./css/escolha.css";
 @import "./css/seta.css";
 @import "./css/pages.css";
+@import "./css/hud-menu.css";
+@import "./css/input.css";
+@import "./css/topo.css";
 
 * {
   margin: 0px;
@@ -19,20 +22,31 @@
 }
 body {
   background-color: var(--purple-2);
+  padding: 10px;
 }
 
 header {
-  background-color: var(--purple-2);
-  padding: 1em;
+  /* background-color: var(--purple-2); */
+  padding: 10px;
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 1em;
+  /* border-bottom: solid 1px #FFFFFF55; */
+  /* font-size: 0.8em; */
+  color: #4caf50;
+  font-weight: 900;
+
 }
 
+header img{
+  width: 20px;
+}  
+
+
 main {
-  width: 700px;
-  max-width: 90%;
+  width: 1000px;
+  max-width: 100%;
   margin: auto;
   color: white;
 }
@@ -41,7 +55,7 @@ main {
 /* margin: 1em 0; */
 /* } */
 
-button,
+/* button,
 input {
   background-color: var(--pink);
   border-radius: 5px;
@@ -50,13 +64,13 @@ input {
   padding: 0.5em 2em;
   cursor: pointer;
   font-size: large;
-}
+} */
 
-input {
+/* input {
   background-color: var(--purple-1);
   outline: none;
   text-align: center;
-}
+} */
 
 .t-left{text-align: left;}
 .t-right{text-align: right;}

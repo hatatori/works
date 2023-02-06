@@ -273,12 +273,8 @@ let communication = {
 var socket = io("https://ws-homolog.primebets.bet");
 
 socket.on('connect', () => {
-
-    
     const payload = { token: connection.token, game: 'double' }
-
     socket.emit('register', payload)
-
 
     // log('~> emitting register:', payload, 'positive')
     // console.log('~> emitting register:', payload, 'positive')
@@ -306,9 +302,10 @@ socket.on('connect', () => {
         // let test = tik.bets.filter(e=>e.id == stats.id).length
         // console.log("teste:" + test)
 
+        console.log(tik.status)
+
         if(tik.status == "waiting"){
             table.tablenormal()
-            
             // let d1 = new Date(tik.updatedAt)
             // let d2 = new Date()
             // let dif = d2-d1
@@ -342,12 +339,15 @@ socket.on('connect', () => {
         // complete
         if(tik.status == "complete"){
             table.tablewinnumber(cards.choice_number)
-
-
-            console.log('complete')
-            console.log(tik)
-
-            button.setButton('Apostar')
+            // console.log(cards.choice_number)
+            // console.log('complete')
+            // console.log(cards.choice_number)
+            // console.log(cards.choice_number)
+            // console.log(cards.choice_number)
+            // console.log(cards.choice_number)
+            // console.log(cards.choice_number)
+            // console.log(cards.choice_number)
+            // button.setButton('Apostar')
         }
 
         table.lista = tik.bets
@@ -364,9 +364,6 @@ socket.on('connect', () => {
         table.lista_b_quantity = tik.summary[1].count
         table.lista_c_quantity = tik.summary[2].count
 
-        
-            
-        
     });
 })
 

@@ -56,7 +56,15 @@ cards.end = () => {
   // >> quando o card chega no fim
   // console.log('fim do card')
   // table.tablewin((cards.choice_number|0)%3)
-  table.tablewinnumber(cards.choice_number)
+    table.tablewinnumber(cards.choice_number)
+    console.log(cards.choice_number)
+    console.log(cards.choice_number)
+    console.log(cards.choice_number)
+    console.log(cards.choice_number)
+    console.log(cards.choice_number)
+    console.log(cards.choice_number)
+
+
   // console.log(cards.choice_number)
 
   // table.tablewin((cards.choice_number|0)%3)
@@ -3512,6 +3520,16 @@ let listafake = [
 window.addEventListener("keyup" , e=> {
 
   if(e.key == "1") table.setLista(listafake)  // preenche a tabela com usuários e apostas
+  if(e.key == "2") {
+    table.tablewinnumber(cards.choice_number)
+    console.log(cards.choice_number)
+    console.log(cards.choice_number)
+    console.log(cards.choice_number)
+    console.log(cards.choice_number)
+    console.log(cards.choice_number)
+    console.log(cards.choice_number)
+  }
+
   // if(e.key == "2") communication.renew() // apagar todos os usuários que apostaram 
   // if(e.key == "3") table.tablewin(0) // insere cor ao vencedor na tabela
   // if(e.key == "4") table.tablenormal() // remove as cores da tabela
