@@ -347,6 +347,8 @@ socket.on('connect', () => {
 
             button.setButton("Apostar")
             stats.hud_on()
+            
+            // message.normal("ok")
 
 
             // console.log(cards.choice_number)

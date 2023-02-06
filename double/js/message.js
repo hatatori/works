@@ -42,5 +42,6 @@ let message = {
 
 }
 
+// message.normal("Ganhou R$ 500")
 
 export default message
