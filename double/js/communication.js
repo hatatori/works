@@ -306,12 +306,12 @@ socket.on('connect', () => {
         
         historic.list = tik.history
 
-        // let test = tik.bets.filter(e=>e.id == stats.id).length
-        // console.log("teste:" + test)
+        // console.log(tik)
+        // console.log(tik.bets.result)
 
-        console.log('tik')
-        console.log(tik)
-        // console.log(tik.status)
+        console.log(tik.status)
+        // console.log(tik.bets)
+
 
         if(tik.status == "waiting"){
             table.tablenormal()
@@ -356,7 +356,6 @@ socket.on('connect', () => {
             stats.hud_on()
 
             // message.normal("ok")
-
 
             // console.log(cards.choice_number)
             // console.log('complete')
