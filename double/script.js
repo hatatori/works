@@ -10,8 +10,6 @@ import message from "./js/message.js";
 import setColors from "./js/colors.js";
 
 
-
-
 // {
 //   "id": "b2ab7d06-a794-46af-9eff-9f5939cf500a",
 //   "color": 1,
@@ -3534,7 +3532,7 @@ window.addEventListener("keyup" , e=> {
   // if(e.key == "3") table.tablewin(0) // insere cor ao vencedor na tabela
   // if(e.key == "4") table.tablenormal() // remove as cores da tabela
   // if(e.key == "5") cards.choice(1) // roda o slide e cai no número escolhido
-  // if(e.key == "6") loading.setTime(500) // seta o tempo tempo
+  if(e.key == "6") loading.resetTime(10) // seta o tempo tempo
   // if(e.key == "7") historic.add(cards.choice_number) // adiciona ao histórico
   
   // if(e.key == "a") table.tablewinnumber(0) // renovar
@@ -3577,4 +3575,5 @@ window.addEventListener("keyup" , e=> {
 //   let w2 = w/2
 //   cards_in.style.transform = `translateX(${cards_in.x + w2 + 680 + 80}px)`
 // };
+
 

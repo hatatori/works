@@ -27,6 +27,8 @@
 .btn-pink {
   background-color: var(--pink-1);
   color: var(--pink-3);
+  color: #FFFFFF;
+
 }
 
 .btn-pink-outline {

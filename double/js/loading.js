@@ -9,7 +9,7 @@ let loading = {
   setTime(n) {
     
     this.time = n;
-    this.pink.style.width = `${(n * bar_pink.parentElement.offsetWidth) / 1000}px`;
+    this.pink.style.width = `${(n * bar_pink.parentElement.offsetWidth) / 100}px`;
 
     if (n > 0) {
       this.div.style.opacity = 1;
@@ -17,7 +17,6 @@ let loading = {
 
     if (this.time == 0) {
       this.end();
-      
     }
     
   },
@@ -28,7 +27,6 @@ let loading = {
 
   end() {
     console.log("tempo: "+this.time);
-    console.log("fim do tempo");
     this.div.style.opacity = 0;
     div_aguardar.style.opacity = 0
   },
@@ -39,10 +37,21 @@ let loading = {
     stats.hud_off();
   },
 
+  resetTime(time_limit){
+    this.d1 = new Date()
+    this.time_limit = time_limit
+  },
+
   update() {
 
+    let d2 = new Date()
+    let s = ((d2-this.d1)/1000)
+    let dif = this.time_limit-s
+    let calc = dif*100/this.time_limit
+    loading.setTime(calc)
+
     if (this.time >= 0 && cards.status == "stop") {
-      this.down();
+    //   this.down();
       div_aguardar.style.opacity = 1
     }else{
       div_aguardar.style.opacity = 0
@@ -65,3 +74,5 @@ let loading = {
 window.requestAnimationFrame(loading.update.bind(loading));
 
 export default loading;
+
+loading.resetTime(1)

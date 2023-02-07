@@ -281,12 +281,17 @@ socket.on('connect', () => {
 
     // const doubleGame = DoubleGame()
     socket.on('registerCallback', msg=>{
-        
+
+        console.log('msg')
+        console.log(msg)
+
         colors(msg.settings.colors)
 
         stats.setWallet(msg.balance)
         stats.setName(msg.username)
         stats.setId(msg.id)
+
+        loading.resetTime(15)
 
         // table.sethistoric(msg.history)
         
@@ -315,14 +320,20 @@ socket.on('connect', () => {
 
         if(tik.status == "waiting"){
             table.tablenormal()
+            console.log(">  waiting")
+            console.log(tik)
             // let d1 = new Date(tik.updatedAt)
             // let d2 = new Date()
             // let dif = d2-d1
             // dif = dif/1000/60
-            loading.setTime(1000)
+            loading.resetTime(15)
         }
 
-        if(tik.status == "started") stats.hud_off()
+        if(tik.status == "started") {
+            console.log('> started')
+            console.log(tik)
+            stats.hud_off()
+        }
         
         //started
         if(tik.status == "started" && tik.color == 1) {
@@ -350,10 +361,14 @@ socket.on('connect', () => {
         // complete
         if(tik.status == "complete"){
             
+            message.normal("Jogada encerrada")
+
             table.tablewinnumber(cards.choice_number)
 
             button.setButton("Apostar")
             stats.hud_on()
+
+            console.log(tik)
 
             // message.normal("ok")
 
