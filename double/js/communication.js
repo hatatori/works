@@ -6,6 +6,7 @@ import stats from "./stats.js";
 import loading from "./loading.js";
 import connection from "./connection.js";
 import button from "./button.js";
+import colors from './colors.js'
 
 let fakelist = [
     {img:1, name:"Sofia",	value:197, choice: 2},
@@ -269,7 +270,6 @@ let communication = {
 
 // let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLWhvbW9sb2cucHJpbWViZXRzLmJldC9zaWduLWluL2N1c3RvbWVyIiwiaWF0IjoxNjc1NjI4MDQxLCJleHAiOjE2NzU3MTQ0NDEsIm5iZiI6MTY3NTYyODA0MSwianRpIjoiUjI0M0FqcmFNbjhZRXhieiIsInN1YiI6IjZkMzM4MGYyLWZjMjMtNDY2ZS1hNWM0LTlkZDdjNjg3NzkyYiIsInBydiI6IjVlMzliMzMwOTg0Y2E4NWU2OWYwYjA4ZjIzYzg3MWY3MzVlMTU2MjQiLCJuYW1lIjoiQmxhbmNoZSBNY0dseW5uIiwiZW1haWwiOiJhcm5vLnN0b2tlc0B5YWhvby5jb20ifQ.SFzwHi7fBScBfzGOzkk7QE9EnTeNAdK54XBIjkETUKA"
 
-
 var socket = io("https://ws-homolog.primebets.bet");
 
 socket.on('connect', () => {
@@ -281,12 +281,16 @@ socket.on('connect', () => {
 
     // const doubleGame = DoubleGame()
     socket.on('registerCallback', msg=>{
-        console.log('msg')
-        console.log(msg)
+        
+        colors(msg.settings.colors)
 
         stats.setWallet(msg.balance)
         stats.setName(msg.username)
         stats.setId(msg.id)
+
+        // table.sethistoric(msg.history)
+        
+        // historic.list = msg.history
 
         // if(msg.username)
 
@@ -299,10 +303,13 @@ socket.on('connect', () => {
     })
 
     socket.on('double.tick', tik=>{
+        
+        historic.list = tik.history
 
         // let test = tik.bets.filter(e=>e.id == stats.id).length
         // console.log("teste:" + test)
 
+        console.log('tik')
         console.log(tik)
         // console.log(tik.status)
 
@@ -347,7 +354,7 @@ socket.on('connect', () => {
 
             button.setButton("Apostar")
             stats.hud_on()
-            
+
             // message.normal("ok")
 
 

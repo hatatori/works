@@ -10,19 +10,19 @@ function setColors(objs){
 
     const setPropertyCss = (variable, color) => document.documentElement.style.setProperty(variable, color);
 
-    setPropertyCss('--blue-1', objs.colors[0].foreground);
-    setPropertyCss('--blue-2', objs.colors[0].background);
-    setPropertyCss('--green-2', objs.colors[1].foreground);
-    setPropertyCss('--green-1', objs.colors[1].background);
-    setPropertyCss('--white-2', objs.colors[2].foreground);
-    setPropertyCss('--white-1', objs.colors[2].background);
+    setPropertyCss('--blue-1', objs[0].foreground);
+    setPropertyCss('--blue-2', objs[0].background);
+    setPropertyCss('--green-2', objs[1].foreground);
+    setPropertyCss('--green-1', objs[1].background);
+    setPropertyCss('--white-2', objs[2].foreground);
+    setPropertyCss('--white-1', objs[2].background);
+    btn_escolha_1.innerHTML = objs[0].multiplier+"x"
+    btn_escolha_2.innerHTML = objs[1].multiplier+"x"
+    btn_escolha_3.innerHTML = objs[2].multiplier+"x"
 
-    btn_escolha_1.innerHTML = objs.colors[0].multiplier+"x"
-    btn_escolha_2.innerHTML = objs.colors[1].multiplier+"x"
-    btn_escolha_3.innerHTML = objs.colors[2].multiplier+"x"
     
 }
 
-setColors(col)
+// setColors(col)
 
 export default setColors
