@@ -310,7 +310,7 @@ socket.on('connect', () => {
         // console.log(tik.bets.result)
 
         console.log(tik.status)
-        // console.log(tik.bets)
+        // console.log(tik.bets))
 
 
         if(tik.status == "waiting"){
