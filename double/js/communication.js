@@ -320,13 +320,15 @@ socket.on('connect', () => {
 
         if(tik.status == "waiting"){
             table.tablenormal()
-            console.log(">  waiting")
-            console.log(tik)
-            // let d1 = new Date(tik.updatedAt)
-            // let d2 = new Date()
-            // let dif = d2-d1
-            // dif = dif/1000/60
+
+            let time_start = new Date(tik.updatedAt)
+            let time_now = new Date()
+            
+            let dif = time_now.getTime() - time_start.getTime()
+            dif = dif/1000
+            
             loading.resetTime(15)
+
         }
 
         if(tik.status == "started") {
