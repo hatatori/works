@@ -10,6 +10,8 @@ import colors from './colors.js'
 
 // let socket = io()
 
+
+
 let communication = {
     add(obj){
         message.normal("add")
@@ -67,14 +69,12 @@ let communication = {
 
 // let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLWhvbW9sb2cucHJpbWViZXRzLmJldC9zaWduLWluL2N1c3RvbWVyIiwiaWF0IjoxNjc1NjI4MDQxLCJleHAiOjE2NzU3MTQ0NDEsIm5iZiI6MTY3NTYyODA0MSwianRpIjoiUjI0M0FqcmFNbjhZRXhieiIsInN1YiI6IjZkMzM4MGYyLWZjMjMtNDY2ZS1hNWM0LTlkZDdjNjg3NzkyYiIsInBydiI6IjVlMzliMzMwOTg0Y2E4NWU2OWYwYjA4ZjIzYzg3MWY3MzVlMTU2MjQiLCJuYW1lIjoiQmxhbmNoZSBNY0dseW5uIiwiZW1haWwiOiJhcm5vLnN0b2tlc0B5YWhvby5jb20ifQ.SFzwHi7fBScBfzGOzkk7QE9EnTeNAdK54XBIjkETUKA"
 
+let user = {}
 
 document.querySelector("#loadingpage").style.display = "flex"
 document.querySelector("#topo").style.display = "none"
 document.querySelector("#table").style.display = "none"
 document.querySelector(".pages").style.display = "none"
-
-
-
 
 var socket = io("https://ws-homolog.primebets.bet");
 
@@ -98,6 +98,10 @@ socket.on('connect', () => {
         stats.setWallet(msg.balance)
         stats.setName(msg.username)
         stats.setId(msg.id)
+        
+        if(user.id == undefined ) user.id = msg.id
+
+        console.log(user.id)
 
         // loading.resetTime(15)
         // table.sethistoric(msg.history)
@@ -116,9 +120,10 @@ socket.on('connect', () => {
     socket.on('double.tick', tik=>{
 
         stats.hud_off()
-
         
         console.log(tik.status)
+
+        
 
         document.querySelector("#loadingpage").style.display = "none"
         document.querySelector("#topo").removeAttribute('style')
@@ -126,7 +131,7 @@ socket.on('connect', () => {
         document.querySelector(".pages").removeAttribute('style')
 
         
-        historic.list = tik.history
+        
 
 
         console.log(tik.status)
@@ -154,13 +159,13 @@ socket.on('connect', () => {
 
         if(tik.status == "started") {
             stats.hud_off()
-            setTimeout(()=>{
-                let ob = tik.bets.find(e=>e.user.id == stats.id)
+            
+            if(user.id != undefined){
+                let ob = tik.bets.find(e=>e.user.id == user.id)
                 let new_balance = ob.user.balance
-                // stats.setWallet(new_balance)
-                // localStorage.setItem('rs', new_balance)
                 stats.temp_balance = new_balance
-            },5000)
+                console.log(stats)
+            }
         }
         
         //started
@@ -192,15 +197,14 @@ socket.on('connect', () => {
         
 
         // complete
-        console.log(stats.id)
+        
         if(tik.status == "complete"){
 
             // atualiza valor do usuário
 
-            stats.setWallet(localStorage.getItem('rs'))
             stats.setWallet(stats.temp_balance)
             
-            
+            historic.list = tik.history
             
             message.normal("Jogada encerrada")
 
