@@ -116,9 +116,9 @@ socket.on('connect', () => {
         console.log(tik.status)
 
         document.querySelector("#loadingpage").style.display = "none"
-        document.querySelector("#topo").style.display = "block"
-        document.querySelector("#table").style.display = "block"
-        document.querySelector(".pages").style.display = "block"
+        document.querySelector("#topo").removeAttribute('style')
+        document.querySelector("#table").removeAttribute('style')
+        document.querySelector(".pages").removeAttribute('style')
 
         historic.list = tik.history
 
