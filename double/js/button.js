@@ -8,7 +8,10 @@ let button = {
       btn_apostar.innerHTML = "Apostou";
       stats.setCanBet(false);
       stats.hud_off()
-    }else{
+
+    }
+    
+    if(value == "Apostar"){
       btn_apostar.innerHTML = value;
       btn_apostar.removeAttribute('style')
       stats.setCanBet(true);

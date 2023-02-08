@@ -3,6 +3,7 @@ import communication from "./communication.js";
 import message from './message.js'
 import connection from './connection.js'
 import button from "./button.js";
+import user from './user.js'
 
 let events = {}
 
@@ -39,7 +40,7 @@ btn_apostar.onclick = () => {
     return
   }
 
-  if (btn_apostar.innerHTML == "Apostar") {
+  // if (btn_apostar.innerHTML == "Apostar") {
     // btn_apostar.style.backgroundColor = "#555";
     // btn_apostar.innerHTML = "Apostou";
     // stats.setCanBet(false);
@@ -48,7 +49,9 @@ btn_apostar.onclick = () => {
     // stats.hud_off()
     connection.bet(stats.betValue, stats.color)
 
-  }
+  // }
+
+  user.bet = true
 };
 
 btn_double.onclick = () => stats.setBetValue(stats.betValue * 2);

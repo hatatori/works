@@ -7,7 +7,7 @@ import loading from "./loading.js";
 import connection from "./connection.js";
 import button from "./button.js";
 import colors from './colors.js'
-
+import user from './user.js'
 // let socket = io()
 
 
@@ -69,7 +69,7 @@ let communication = {
 
 // let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLWhvbW9sb2cucHJpbWViZXRzLmJldC9zaWduLWluL2N1c3RvbWVyIiwiaWF0IjoxNjc1NjI4MDQxLCJleHAiOjE2NzU3MTQ0NDEsIm5iZiI6MTY3NTYyODA0MSwianRpIjoiUjI0M0FqcmFNbjhZRXhieiIsInN1YiI6IjZkMzM4MGYyLWZjMjMtNDY2ZS1hNWM0LTlkZDdjNjg3NzkyYiIsInBydiI6IjVlMzliMzMwOTg0Y2E4NWU2OWYwYjA4ZjIzYzg3MWY3MzVlMTU2MjQiLCJuYW1lIjoiQmxhbmNoZSBNY0dseW5uIiwiZW1haWwiOiJhcm5vLnN0b2tlc0B5YWhvby5jb20ifQ.SFzwHi7fBScBfzGOzkk7QE9EnTeNAdK54XBIjkETUKA"
 
-let user = {}
+
 
 document.querySelector("#loadingpage").style.display = "flex"
 document.querySelector("#topo").style.display = "none"
@@ -89,6 +89,7 @@ socket.on('connect', () => {
     socket.on('registerCallback', msg=>{
 
         console.log('registerCallback')
+        console.log(msg)
         
         // colors(msg.settings.colors)
         colors(msg.settings.colors)
@@ -99,7 +100,7 @@ socket.on('connect', () => {
         stats.setName(msg.username)
         stats.setId(msg.id)
         
-        if(user.id == undefined ) user.id = msg.id
+        if( user.id == undefined ) user.id = msg.id
 
         console.log(user.id)
 
@@ -139,7 +140,8 @@ socket.on('connect', () => {
 
         if(tik.status == "waiting"){
             table.tablenormal()
-            button.setButton("Apostar")
+
+            if(user.bet == false) button.setButton("Apostar")
             // stats.hud_on()
 
             // let time_a = new Date(tik.updatedAt)
@@ -160,11 +162,11 @@ socket.on('connect', () => {
         if(tik.status == "started") {
             stats.hud_off()
             
-            if(user.id != undefined){
+            if(user.id != undefined && user.bet){
                 let ob = tik.bets.find(e=>e.user.id == user.id)
                 let new_balance = ob.user.balance
                 stats.temp_balance = new_balance
-                console.log(stats)
+                // console.log(stats)
             }
         }
         
@@ -199,16 +201,19 @@ socket.on('connect', () => {
         // complete
         
         if(tik.status == "complete"){
+            
 
             // atualiza valor do usuário
 
-            stats.setWallet(stats.temp_balance)
+            if(user.bet) stats.setWallet(stats.temp_balance)
             
             historic.list = tik.history
             
             message.normal("Jogada encerrada")
 
             table.tablewinnumber(cards.choice_number)
+
+            user.bet = false
 
             // button.setButton("Apostar")
             // stats.hud_on()
