@@ -1,3 +1,6 @@
+import button from "./button.js"
+import message from "./message.js"
+
 let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODQvc2lnbi1pbi9jdXN0b21lciIsImlhdCI6MTY3NTQzOTIxMiwiZXhwIjoxNjc1NzU3MjEyLCJuYmYiOjE2NzU0MzkyMTIsImp0aSI6IkttdklqYVJsaUNwYlBHV3IiLCJzdWIiOiJhNmUwYTc3ZS1jZTc3LTRiNDAtOGU3MS0xOTQ2YTU4MTRjNmUiLCJwcnYiOiI1ZTM5YjMzMDk4NGNhODVlNjlmMGIwOGYyM2M4NzFmNzM1ZTE1NjI0IiwibmFtZSI6IkVhcm5lc3QgUm93ZSIsImVtYWlsIjoiYnJpZGllX2JveWVyNzdAaG90bWFpbC5jb20ifQ.mAUjlu5IGInHbHBqXFyKK9t9lvg4EWRC44nfkM4bG-E"
 
 let token_string = window.location.search.split("t=").at(-1)
@@ -20,7 +23,13 @@ let connection = {
             },
             body: JSON.stringify({amount:amount,color:color})
         })
-        // .then(e=>{ stats.hud_off() })
+        .then(e=>{ 
+            if(e.status != 200 || e.status != 202){
+                message.normal("Não foi possível apostar")
+                stats.hud_on()
+                button.setButton("Apostar")
+            }
+        })
 
     }
 }

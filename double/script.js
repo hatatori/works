@@ -51,7 +51,7 @@ cards.end = () => {
 
   cards.status = 'stop'
 
-  loading.resetTime(13)
+//   loading.resetTime(13)
 
   // >> quando o card chega no fim
   // console.log('fim do card')
