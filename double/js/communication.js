@@ -148,8 +148,6 @@ socket.on('connect', () => {
 
             loading.resetTime(15)
 
-
-
         }
 
         
@@ -160,7 +158,8 @@ socket.on('connect', () => {
                 let ob = tik.bets.find(e=>e.user.id == stats.id)
                 let new_balance = ob.user.balance
                 // stats.setWallet(new_balance)
-                localStorage.setItem('rs', new_balance)
+                // localStorage.setItem('rs', new_balance)
+                stats.temp_balance = new_balance
             },5000)
         }
         
@@ -199,6 +198,8 @@ socket.on('connect', () => {
             // atualiza valor do usuário
 
             stats.setWallet(localStorage.getItem('rs'))
+            stats.setWallet(stats.temp_balance)
+            
             
             
             message.normal("Jogada encerrada")
