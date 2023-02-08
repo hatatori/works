@@ -25,9 +25,7 @@ let connection = {
         })
         .then(e=>{ 
             if(e.status != 200 || e.status != 202){
-                message.normal("Não foi possível apostar")
-                stats.hud_on()
-                button.setButton("Apostar")
+                message.normal("Algo saiu errado")
             }
         })
 
