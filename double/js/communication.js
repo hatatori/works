@@ -270,6 +270,8 @@ let communication = {
 
 // let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLWhvbW9sb2cucHJpbWViZXRzLmJldC9zaWduLWluL2N1c3RvbWVyIiwiaWF0IjoxNjc1NjI4MDQxLCJleHAiOjE2NzU3MTQ0NDEsIm5iZiI6MTY3NTYyODA0MSwianRpIjoiUjI0M0FqcmFNbjhZRXhieiIsInN1YiI6IjZkMzM4MGYyLWZjMjMtNDY2ZS1hNWM0LTlkZDdjNjg3NzkyYiIsInBydiI6IjVlMzliMzMwOTg0Y2E4NWU2OWYwYjA4ZjIzYzg3MWY3MzVlMTU2MjQiLCJuYW1lIjoiQmxhbmNoZSBNY0dseW5uIiwiZW1haWwiOiJhcm5vLnN0b2tlc0B5YWhvby5jb20ifQ.SFzwHi7fBScBfzGOzkk7QE9EnTeNAdK54XBIjkETUKA"
 
+document.body.style.display = "none"
+
 var socket = io("https://ws-homolog.primebets.bet");
 
 socket.on('connect', () => {
@@ -282,7 +284,7 @@ socket.on('connect', () => {
     // const doubleGame = DoubleGame()
     socket.on('registerCallback', msg=>{
 
-        console.log('msg')
+        console.log('registerCallback')
         console.log(msg)
 
         colors(msg.settings.colors)
@@ -308,13 +310,18 @@ socket.on('connect', () => {
     })
 
     socket.on('double.tick', tik=>{
+
+        document.body.style.display = "block"
         
         historic.list = tik.history
+
 
         // console.log(tik)
         // console.log(tik.bets.result)
 
+        console.log('status')
         console.log(tik.status)
+        console.log(tik)
         // console.log(tik.bets))
 
 
@@ -327,13 +334,16 @@ socket.on('connect', () => {
             let dif = time_now.getTime() - time_start.getTime()
             dif = dif/1000
             
+            console.log(time_start)
+            console.log(time_now)
+
             loading.resetTime(15)
 
         }
 
         if(tik.status == "started") {
             console.log('> started')
-            console.log(tik)
+            console.log(tik.bets.find(e=>e.user.id == stats.id))
             stats.hud_off()
         }
         
@@ -362,6 +372,8 @@ socket.on('connect', () => {
 
         // complete
         if(tik.status == "complete"){
+
+            
             
             message.normal("Jogada encerrada")
 
@@ -370,7 +382,8 @@ socket.on('connect', () => {
             button.setButton("Apostar")
             stats.hud_on()
 
-            console.log(tik)
+
+            // loading.resetTime(10)
 
             // message.normal("ok")
 
