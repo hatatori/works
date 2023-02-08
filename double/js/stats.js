@@ -53,15 +53,19 @@ let stats = {
   setChoice(n) {
     if (this.buttonText == "Apostou") return false;
     if (this.canBet == false) return false;
-    this.choice = n;
+    
+    // if(n==0) this.choice = 0;
+    // if(n==1) this.choice = 3;
+    // if(n==2) this.choice = 1;
+    
     this.resetChoice(n)
   },
 
-  resetChoice(n){
+  resetChoice(){
     btn_escolha_1.classList.remove("btn-active")
     btn_escolha_2.classList.remove("btn-active")
     btn_escolha_3.classList.remove("btn-active")
-    document.querySelector(".escolha").children[n].classList.add("btn-active")
+    // document.querySelector(".escolha").children[n].classList.add("btn-active")
   },
 
   reset() {

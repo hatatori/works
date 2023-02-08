@@ -110,44 +110,12 @@
           </div>
   
           <div class="t-right">
-            <b>Total: R$ {{lista_a_total}}</b>
+            <b>Total: R$ {{lista_b_total}}</b>
           </div>
   
           <!-- table -->
           
           <table class="table table-striped table-dark" id="tabela_1">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="left">Usuário</th>
-                <th class="right">Quantia</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="item in lista_a">
-                <td class="img"><img src="./imgs/crown_gold.svg" style="margin-right: 5px;"> </td>
-                <td class="left">{{item.user.username}}</td>
-                <td class="right">R$ {{item.betAmount}}</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- endtable -->
-          <p>{{lista_c_quantity}} jogadores</p>
-
-        </section>
-        <section class="page">
-          <div class="title"> 
-            <span class="square square--white"></span>
-            <span>vitória </span>
-            <span>14x</span>
-          </div>
-
-          <div class="t-right">
-            <b>Total: R$ {{lista_b_total}}</b>
-          </div>
-
-          <!-- table -->
-          <table class="table table-striped table-dark" id="tabela_2">
             <thead>
               <tr>
                 <th></th>
@@ -165,12 +133,13 @@
           </table>
           <!-- endtable -->
           <p>{{lista_b_quantity}} jogadores</p>
+
         </section>
         <section class="page">
           <div class="title"> 
-            <span class="square square--blue"></span>
+            <span class="square square--white"></span>
             <span>vitória </span>
-            <span>2x</span>
+            <span>14x</span>
           </div>
 
           <div class="t-right">
@@ -178,7 +147,7 @@
           </div>
 
           <!-- table -->
-          <table class="table table-striped table-dark" id="tabela_3">
+          <table class="table table-striped table-dark" id="tabela_2">
             <thead>
               <tr>
                 <th></th>
@@ -196,6 +165,37 @@
           </table>
           <!-- endtable -->
           <p>{{lista_c_quantity}} jogadores</p>
+        </section>
+        <section class="page">
+          <div class="title"> 
+            <span class="square square--blue"></span>
+            <span>vitória </span>
+            <span>2x</span>
+          </div>
+
+          <div class="t-right">
+            <b>Total: R$ {{lista_a_total}}</b>
+          </div>
+
+          <!-- table -->
+          <table class="table table-striped table-dark" id="tabela_3">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="left">Usuário</th>
+                <th class="right">Quantia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in lista_a">
+                <td class="img"><img src="./imgs/crown_gold.svg" style="margin-right: 5px;"> </td>
+                <td class="left">{{item.user.username}}</td>
+                <td class="right">R$ {{item.betAmount}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- endtable -->
+          <p>{{lista_a_quantity}} jogadores</p>
         </section>
   
       </main>

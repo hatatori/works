@@ -1,7 +1,7 @@
 import button from "./button.js"
 import message from "./message.js"
 
-let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODQvc2lnbi1pbi9jdXN0b21lciIsImlhdCI6MTY3NTQzOTIxMiwiZXhwIjoxNjc1NzU3MjEyLCJuYmYiOjE2NzU0MzkyMTIsImp0aSI6IkttdklqYVJsaUNwYlBHV3IiLCJzdWIiOiJhNmUwYTc3ZS1jZTc3LTRiNDAtOGU3MS0xOTQ2YTU4MTRjNmUiLCJwcnYiOiI1ZTM5YjMzMDk4NGNhODVlNjlmMGIwOGYyM2M4NzFmNzM1ZTE1NjI0IiwibmFtZSI6IkVhcm5lc3QgUm93ZSIsImVtYWlsIjoiYnJpZGllX2JveWVyNzdAaG90bWFpbC5jb20ifQ.mAUjlu5IGInHbHBqXFyKK9t9lvg4EWRC44nfkM4bG-E"
+let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLWhvbW9sb2cucHJpbWViZXRzLmJldC9zaWduLWluL2N1c3RvbWVyIiwiaWF0IjoxNjc1ODc5NjA2LCJleHAiOjE2NzYzMTE2MDYsIm5iZiI6MTY3NTg3OTYwNiwianRpIjoiQ1BUVmNLTWdHMlRGQmppYSIsInN1YiI6IjE3OWYzZDdjLTlmNjctMTFlZC04MGQ4LTAyNDJhYzFhMDAwMiIsInBydiI6IjVlMzliMzMwOTg0Y2E4NWU2OWYwYjA4ZjIzYzg3MWY3MzVlMTU2MjQiLCJuYW1lIjoiUHJpbWUgQmV0cyBPZmljaWFsIiwiZW1haWwiOiJwcmltZWJldHNvZmljaWFsQHByaW1lYmV0cy5iZXQifQ.ehQ-Dvbt-6pDYazXlmbl6_0JJCSYkX3uhxyOGy9dGXk"
 
 let token_string = window.location.search.split("t=").at(-1)
 
@@ -28,7 +28,6 @@ let connection = {
                 message.normal("Algo saiu errado")
             }
         })
-
     }
 }
 

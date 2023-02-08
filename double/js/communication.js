@@ -89,7 +89,12 @@ socket.on('connect', () => {
         console.log('registerCallback')
         console.log(msg)
 
+        // colors(msg.settings.colors)
         colors(msg.settings.colors)
+
+        console.log('> balance')
+        
+        stats.setWallet(msg.balance)
 
         stats.setWallet(msg.balance)
         stats.setName(msg.username)
@@ -117,6 +122,7 @@ socket.on('connect', () => {
     socket.on('double.tick', tik=>{
 
         console.log(tik.status)
+        console.log(tik)
 
         document.querySelector("#loadingpage").style.display = "none"
         document.querySelector("#topo").removeAttribute('style')
@@ -137,6 +143,8 @@ socket.on('connect', () => {
 
         if(tik.status == "waiting"){
             table.tablenormal()
+            button.setButton("Apostar")
+            // stats.hud_on()
 
             // let time_a = new Date(tik.updatedAt)
             // let time_b = new Date()
@@ -188,8 +196,8 @@ socket.on('connect', () => {
 
             table.tablewinnumber(cards.choice_number)
 
-            button.setButton("Apostar")
-            stats.hud_on()
+            // button.setButton("Apostar")
+            // stats.hud_on()
 
             console.log('stats')
             console.log(stats)
