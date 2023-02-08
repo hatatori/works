@@ -55,7 +55,7 @@ let communication = {
 // socket.on('card_choice_num', num  => { cards.choice(num)  })
 // socket.on('historic_res', ar  => { historic.list = ar  })
 
-// socket.on('tempo', ar  => { console.log(ar)  })
+// socket.on('tempo', ar  => { 
 
 // table.setLista([])
 
@@ -74,6 +74,8 @@ document.querySelector("#table").style.display = "none"
 document.querySelector(".pages").style.display = "none"
 
 
+
+
 var socket = io("https://ws-homolog.primebets.bet");
 
 socket.on('connect', () => {
@@ -81,34 +83,25 @@ socket.on('connect', () => {
     socket.emit('register', payload)
 
     // log('~> emitting register:', payload, 'positive')
-    // console.log('~> emitting register:', payload, 'positive')
+    // 
 
     // const doubleGame = DoubleGame()
     socket.on('registerCallback', msg=>{
 
         console.log('registerCallback')
-        console.log(msg)
-
+        
         // colors(msg.settings.colors)
         colors(msg.settings.colors)
 
-        console.log('> balance')
-        
         stats.setWallet(msg.balance)
 
         stats.setWallet(msg.balance)
         stats.setName(msg.username)
         stats.setId(msg.id)
 
-        console.log('msg.id')
-        console.log(msg.id)
-
-        loading.resetTime(15)
-
+        // loading.resetTime(15)
         // table.sethistoric(msg.history)
-        
         // historic.list = msg.history
-
         // if(msg.username)
 
         let user_active_table = table.lista.filter(e=>e.name == e.username).length
@@ -117,28 +110,26 @@ socket.on('connect', () => {
             button.setButton("Apostou")
         }
 
+
     })
 
     socket.on('double.tick', tik=>{
 
+        stats.hud_off()
+
+        
         console.log(tik.status)
-        console.log(tik)
 
         document.querySelector("#loadingpage").style.display = "none"
         document.querySelector("#topo").removeAttribute('style')
         document.querySelector("#table").removeAttribute('style')
         document.querySelector(".pages").removeAttribute('style')
 
+        
         historic.list = tik.history
 
 
-        // console.log(tik)
-        // console.log(tik.bets.result)
-
-        console.log('status')
         console.log(tik.status)
-        console.log(tik)
-        // console.log(tik.bets))
 
 
         if(tik.status == "waiting"){
@@ -152,18 +143,25 @@ socket.on('connect', () => {
             // let time_dif = time_a.getTime() - time_b.getTime()
             // time_dif = time_dif/1000
             
-            // console.log(time_start)
-            // console.log(time_now)
+            // 
+            // 
 
             loading.resetTime(15)
-            
+
+
 
         }
 
+        
+
         if(tik.status == "started") {
-            console.log('> started')
-            console.log(tik.bets.find(e=>e.user.id == stats.id))
             stats.hud_off()
+            setTimeout(()=>{
+                let ob = tik.bets.find(e=>e.user.id == stats.id)
+                let new_balance = ob.user.balance
+                // stats.setWallet(new_balance)
+                localStorage.setItem('rs', new_balance)
+            },1000)
         }
         
         //started
@@ -189,8 +187,19 @@ socket.on('connect', () => {
             // setTimeout(()=>{ table.tablewinnumber(0) },2000)
         }
 
+        // stats.setWallet(ob.user.balance)
+        
+
+        
+
         // complete
+        console.log(stats.id)
         if(tik.status == "complete"){
+
+            // atualiza valor do usuário
+
+            stats.setWallet(localStorage.getItem('rs'))
+            
             
             message.normal("Jogada encerrada")
 
@@ -199,23 +208,32 @@ socket.on('connect', () => {
             // button.setButton("Apostar")
             // stats.hud_on()
 
-            console.log('stats')
-            console.log(stats)
-            console.log(stats.id)
-            console.log(tik.bets)
+            
+            //aqui
+            // console.log(tik.bets)
+            // function refreshwallet(tik){
+            //     let ob = tik.bets.find(e=>e.user.id == stats.id)
+            //     let new_balance = ob.user.balance
+            //     stats.setWallet(new_balance)
+            // }
+            
+            // refreshwallet(tik)
+
+            
+            
 
             // loading.resetTime(10)
 
             // message.normal("ok")
 
-            // console.log(cards.choice_number)
-            // console.log('complete')
-            // console.log(cards.choice_number)
-            // console.log(cards.choice_number)
-            // console.log(cards.choice_number)
-            // console.log(cards.choice_number)
-            // console.log(cards.choice_number)
-            // console.log(cards.choice_number)
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
             // button.setButton('Apostar')
         }
 
@@ -237,15 +255,15 @@ socket.on('connect', () => {
 })
 
 // socket.on("connect", function() {
-//   console.log("Connected to server");
+//   
 // });
 
 // socket.on("event", function(data) {
-//   console.log("Event received:", data);
+//   
 // });
 
 // socket.on("disconnect", function() {
-//   console.log("Disconnected from server");
+//   
 // });
 
 

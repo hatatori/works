@@ -75,4 +75,4 @@ window.requestAnimationFrame(loading.update.bind(loading));
 
 export default loading;
 
-loading.resetTime(15)
+loading.resetTime(0)

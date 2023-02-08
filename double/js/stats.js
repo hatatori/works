@@ -38,6 +38,7 @@ let stats = {
   },
 
   setWallet(val) {
+    val = parseFloat(val)
     this.wallet = val;
     p_wallet.innerHTML = Money(this.wallet);
   },
