@@ -95,6 +95,9 @@ socket.on('connect', () => {
         stats.setName(msg.username)
         stats.setId(msg.id)
 
+        console.log('msg.id')
+        console.log(msg.id)
+
         loading.resetTime(15)
 
         // table.sethistoric(msg.history)
@@ -180,8 +183,6 @@ socket.on('connect', () => {
 
         // complete
         if(tik.status == "complete"){
-
-            
             
             message.normal("Jogada encerrada")
 
@@ -190,6 +191,10 @@ socket.on('connect', () => {
             button.setButton("Apostar")
             stats.hud_on()
 
+            console.log('stats')
+            console.log(stats)
+            console.log(stats.id)
+            console.log(tik.bets)
 
             // loading.resetTime(10)
 
