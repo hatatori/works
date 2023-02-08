@@ -24,7 +24,7 @@ let connection = {
             body: JSON.stringify({amount:amount,color:color})
         })
         .then(e=>{ 
-            if(e.status != 200 || e.status != 202){
+            if(e.status == 400 || e.status == 403){
                 message.normal("Algo saiu errado")
             }
         })
