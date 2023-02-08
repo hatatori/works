@@ -161,7 +161,7 @@ socket.on('connect', () => {
                 let new_balance = ob.user.balance
                 // stats.setWallet(new_balance)
                 localStorage.setItem('rs', new_balance)
-            },1000)
+            },5000)
         }
         
         //started
