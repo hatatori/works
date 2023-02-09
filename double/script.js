@@ -49,20 +49,19 @@ loading.end = () =>{
 
 cards.end = () => {
 
-  cards.status = 'stop'
+  // >> quando o card chega no fim
+
+  message.normal("> Jogada encerrada, aguarde")
+  table.tablewinnumber(cards.choice_number) 
+  // alert('go')
+  // cards.status = 'stop'
 
 //   loading.resetTime(13)
 
-  // >> quando o card chega no fim
-  // console.log('fim do card')
-  // table.tablewin((cards.choice_number|0)%3)
+    // message.normal("Jogada encerrada, aguarge")
+    
+    
     table.tablewinnumber(cards.choice_number)
-    // console.log(cards.choice_number)
-    // console.log(cards.choice_number)
-    // console.log(cards.choice_number)
-    // console.log(cards.choice_number)
-    // console.log(cards.choice_number)
-    // console.log(cards.choice_number)
 
 
   // console.log(cards.choice_number)
@@ -87,7 +86,7 @@ cards.end = () => {
     if(cards.choice_number%2==0) table.tablewin(1)
   }
 
-  message.normal("Aguarde")
+  // message.normal("Aguarde")
 
   // setTimeout(()=>{
   //   cards.restart()
@@ -169,16 +168,23 @@ let listafake = [
   }
 ]
 
+btn_escolha_1.classList.add('btn-active')
+
 window.addEventListener("keyup" , e=> {
 
   if(e.key == "1") table.setLista(listafake)  // preenche a tabela com usuários e apostas
-  if(e.key == "2") { table.tablewinnumber(cards.choice_number) }
+  
+  if(e.key == "2") { 
+    cards.choice_number = 0
+    table.tablewinnumber(cards.choice_number) 
+    console.log(cards.choice_number)
+  }
 
   // if(e.key == "2") communication.renew() // apagar todos os usuários que apostaram 
   // if(e.key == "3") table.tablewin(0) // insere cor ao vencedor na tabela
   // if(e.key == "4") table.tablenormal() // remove as cores da tabela
   // if(e.key == "5") cards.choice(1) // roda o slide e cai no número escolhido
-  if(e.key == "6") loading.resetTime(10) // seta o tempo tempo
+  // if(e.key == "6") loading.resetTime(10) // seta o tempo tempo
   // if(e.key == "7") historic.add(cards.choice_number) // adiciona ao histórico
   
   // if(e.key == "a") table.tablewinnumber(0) // renovar

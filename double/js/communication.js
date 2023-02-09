@@ -132,11 +132,11 @@ socket.on('connect', () => {
         document.querySelector(".pages").removeAttribute('style')
 
         
-        
 
-
-        console.log(tik.status)
-
+        if(user.time == false) {
+            loading.resetTime(15)
+            user.time = true
+        }
 
         if(tik.status == "waiting"){
             table.tablenormal()
@@ -153,7 +153,7 @@ socket.on('connect', () => {
             // 
             // 
 
-            loading.resetTime(15)
+            
 
         }
 
@@ -214,6 +214,8 @@ socket.on('connect', () => {
             table.tablewinnumber(cards.choice_number)
 
             user.bet = false
+            user.time = false
+            cards.status = 'stop'
 
             // button.setButton("Apostar")
             // stats.hud_on()

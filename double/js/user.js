@@ -1,5 +1,9 @@
 let user = {
-  bet: false
+  bet: false,
+  time: false,
+  setTime(value){
+    this.time = value
+  }
 }
 
 export default user

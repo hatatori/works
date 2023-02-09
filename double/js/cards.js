@@ -38,13 +38,11 @@ let cards = {
       cards_in.style.transform = `translateX(${this.x}px)`;
     }
 
-    if(this.force == 0) this.endcard = true
-
-    //onde termina - fim
-    if(this.force < 0 && this.endcard){
-      this.endcard = false
+    if(this.force < 0 && this.endcard == false){
+      this.endcard = true
       this.end()
     }
+
 
     let w = div_cards.offsetWidth
     let w_center = w/2

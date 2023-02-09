@@ -50,6 +50,7 @@ let loading = {
     let calc = dif*100/this.time_limit
     loading.setTime(calc)
 
+    // if (this.time >= 0 && cards.status == "stop") {
     if (this.time >= 0 && cards.status == "stop") {
     //   this.down();
       div_aguardar.style.opacity = 1

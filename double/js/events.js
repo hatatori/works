@@ -7,6 +7,8 @@ import user from './user.js'
 
 let events = {}
 
+
+
 btn_escolha_1.onclick = (e) => {
   stats.color = 2
   console.log(stats.color)
@@ -56,5 +58,8 @@ btn_apostar.onclick = () => {
 
 btn_double.onclick = () => stats.setBetValue(stats.betValue * 2);
 btn_half.onclick = () => stats.setBetValue(stats.betValue / 2);
+
+
+
 
 export default events
