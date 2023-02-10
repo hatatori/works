@@ -51,10 +51,10 @@ cards.end = () => {
 
   // >> quando o card chega no fim
 
-  message.normal("> Jogada encerrada, aguarde")
+  // message.normal("> Jogada encerrada, aguarde")
   table.tablewinnumber(cards.choice_number) 
 
-  console.log(cards.choice_number)
+  // console.log(cards.choice_number)
 
   // alert('go')
   // cards.status = 'stop'
