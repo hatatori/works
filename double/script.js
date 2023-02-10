@@ -53,6 +53,9 @@ cards.end = () => {
 
   message.normal("> Jogada encerrada, aguarde")
   table.tablewinnumber(cards.choice_number) 
+
+  console.log(cards.choice_number)
+
   // alert('go')
   // cards.status = 'stop'
 
@@ -61,7 +64,6 @@ cards.end = () => {
     // message.normal("Jogada encerrada, aguarge")
     
     
-    table.tablewinnumber(cards.choice_number)
 
 
   // console.log(cards.choice_number)
@@ -80,11 +82,11 @@ cards.end = () => {
   // stats.reset();
   stats.setGameOver(true);
 
-  if(loading.time <= 0){
-    if(cards.choice_number%2==0) table.tablewin(0)
-    if(cards.choice_number%2!=0) table.tablewin(2)
-    if(cards.choice_number%2==0) table.tablewin(1)
-  }
+  // if(loading.time <= 0){
+  //   if(cards.choice_number%2==0) table.tablewin(0)
+  //   if(cards.choice_number%2!=0) table.tablewin(2)
+  //   if(cards.choice_number%2==0) table.tablewin(1)
+  // }
 
   // message.normal("Aguarde")
 

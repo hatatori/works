@@ -72,9 +72,8 @@ let cards = {
     // if(this.force == 1)
     
   },
-  
 
-  end(){
+  // end(){
     // historic.add(this.choice_number);
     // if (stats.gameover == false && btn_apostar.innerHTML == "Apostou") {
     //   if(stats.choice == 1 && this.choice_number == 0) stats.setWallet(stats.wallet + stats.betValue + stats.betValue * 14);
@@ -84,7 +83,7 @@ let cards = {
     // stats.reset();
     // stats.setGameOver(true);
     // console.log('cards.end')
-  },
+  // },
 
   choice(n) {
     n = n%10
@@ -93,6 +92,7 @@ let cards = {
     this.force = pos[n];
     this.choice_number = n;
     stats.setGameOver(false);
+    this.endcard = false
     // stats.hud_off();
 
     stats.setGameOver(false);
