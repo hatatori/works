@@ -122,7 +122,13 @@ socket.on('connect', () => {
 
         stats.hud_off()
         
-        console.log(tik.status)
+        // console.log('testando')
+        // console.log(tik.status)
+        console.log('tik')
+        console.log(tik)
+
+        historic.list = tik.history
+        
 
         
 
@@ -130,8 +136,6 @@ socket.on('connect', () => {
         document.querySelector("#topo").removeAttribute('style')
         document.querySelector("#table").removeAttribute('style')
         document.querySelector(".pages").removeAttribute('style')
-
-        
 
         if(user.time == false) {
             loading.resetTime(15)

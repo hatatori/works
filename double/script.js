@@ -36,8 +36,10 @@ config.init({
 
 loading.end = () =>{
   // quando o tempo chega ao fim
-  // console.log('ok')
+  // console.log(cards.choice_number)
   // communication.loading_end()
+  // message.normal(cards.choice_number)
+  
   
   
 
@@ -53,6 +55,7 @@ cards.end = () => {
 
   // message.normal("> Jogada encerrada, aguarde")
   table.tablewinnumber(cards.choice_number) 
+  // message.normal(cards.choice_number)
 
   // console.log(cards.choice_number)
 
@@ -72,7 +75,8 @@ cards.end = () => {
   // table.table()
 
   // stats.hud_on();
-  historic.add(cards.choice_number);
+  // historic.add(cards.choice_number);
+  // historic.list = cards.choice_number
   // if (stats.gameover == false && btn_apostar.innerHTML == "Apostou") {
   //   if(stats.choice == 1 && cards.choice_number == 0) stats.setWallet(stats.wallet + stats.betValue + stats.betValue * 14);
   //   if(stats.choice == 0 && cards.choice_number != 0 && cards.choice_number % 2 == 0) stats.setWallet(stats.wallet + stats.betValue + stats.betValue * 2);
@@ -179,7 +183,7 @@ window.addEventListener("keyup" , e=> {
   if(e.key == "2") { 
     cards.choice_number = 0
     table.tablewinnumber(cards.choice_number) 
-    console.log(cards.choice_number)
+    cards.choice(cards.choice_number)
   }
 
   // if(e.key == "2") communication.renew() // apagar todos os usuários que apostaram 
