@@ -50,12 +50,13 @@
             
             <!-- <button v-for="item in historic.list" class="btn btn-green">{{item}}</button> -->
             <!-- <button v-for="item in list" v-bind:class="ok" class="btn btn-green">{{item < 3 ? 'a' : 'b'}}</button> -->
+            
             <button 
             v-for="item in list"
             class="btn" 
-            v-bind:class=" item == 0 ? 'btn-white' :  item % 2 == 0 ? 'btn-green' : 'btn-blue' " 
-            >
-            {{item}}
+            v-bind:class=" item == 1 ? 'btn-blue' : item == 3 ? 'btn-white' : 'btn-green  ' " 
+            >   
+            <!-- {{item}} -->
             </button>
 
             <!-- <button class="btn btn-green">1</button> -->
