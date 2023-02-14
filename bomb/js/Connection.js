@@ -51,11 +51,13 @@ let Connection = {
     .then(e=>{
       // console.log(e.status)
       this.check_connection(e.status)
-
+      
       return e.json()
     })
 
     .then(e=> {
+
+      
 
       this.check_connection(e)
       this.check_connection(e.status)
@@ -65,6 +67,7 @@ let Connection = {
       Values.maxBet = maxBet
       Values.taxes = taxes
       Values.setTaxes(taxes)
+      Values.setBet(minBet)
       
       Values.id = gameId
       Values.name = user.name
