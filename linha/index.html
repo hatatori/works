@@ -8,6 +8,8 @@
     <title>Document</title>
     <!-- <script defer src="script.js"></script> -->
     <script type="module" src="js.js"></script>
+    <script src="https://unpkg.com/vue@3.2.20/dist/vue.global.js"></script>
+
   </head>
   <body>
     
@@ -71,6 +73,7 @@
             <!-- <button class="btn btn--blue">3.2</button>
             <button class="btn btn--orange">3.2</button>
             <button class="btn btn--purple">3.2</button> -->
+            <!-- <button class="btn btn--purple">3.2</button> -->
 
             <button v-for="numero in historico" class="btn btn-outline">{{numero}}</button>
 
@@ -91,24 +94,13 @@
                 <th>lucro</th>
               </thead>
               <tbody>
-                <tr>
-                  <td>asd</td>
-                  <td>asd</td>
-                  <td>asd</td>
-                  <td>asd</td>
+                <tr v-for="item in bets">
+                  <td> <img src='./imgs/crown_gold.svg'> {{item.name}}</td>
+                  <td>R$ {{item.bet}}</td>
+                  <td>{{item.mult}}x</td>
+                  <td>{{item.lucro == 0 ? "-" : item.lucro}}</td>
                 </tr>
-                <tr>
-                  <td>asd</td>
-                  <td>asd</td>
-                  <td>asd</td>
-                  <td>asd</td>
-                </tr>
-                <tr>
-                  <td>asd</td>
-                  <td>asd</td>
-                  <td>asd</td>
-                  <td>asd</td>
-                </tr>
+                
               </tbody>
             </table>
             

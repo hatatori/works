@@ -53,7 +53,7 @@ let game = {
     },
 
     explode(){
-        table.addHistoric(this.porcent)
+        // table.addHistoric(this.porcent)
         foguete.explode()
         this.pause()
     },

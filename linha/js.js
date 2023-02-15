@@ -17,6 +17,7 @@ values.setMoney(100)
 game.init()
 game.setLimit(3)
 game.voar()
+
 // game.renew()
 
 // setTimeout(()=> game.reset(), 3000 )
@@ -39,5 +40,4 @@ game.voar()
 
 // game.voar()
 
-// table
-// table.addHistoric(n)
+// table.historico = [1,2,3,4,5,6,7]
