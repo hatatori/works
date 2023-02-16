@@ -7,15 +7,16 @@ import events from "./js/events.js";
 import button from "./js/button.js";
 import table from "./js/table.js";
 
-//init 
+// init
 
 // values
-values.setBet(values.bet)
-values.setMult(values.mult)
-values.setMoney(100)
+// values.setBet(values.bet)
+// values.setMult(values.mult)
+// values.setMoney(values.money)
 
-game.init()
-game.setLimit(3)
+// game.init()
+
+game.setLimit(2)
 game.voar()
 
 // game.renew()
@@ -41,3 +42,9 @@ game.voar()
 // game.voar()
 
 // table.historico = [1,2,3,4,5,6,7]
+
+window.onkeyup=function(e){
+    if(e.key == "1"){
+        console.log(values)
+    }
+}

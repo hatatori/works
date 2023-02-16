@@ -11,6 +11,7 @@
 @import "./css/aside.css";
 @import "./css/sides.css";
 @import "./css/input.css";
+@import "./css/section_main.css";
 
 * {
   margin: 0px;

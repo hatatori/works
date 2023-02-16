@@ -9,12 +9,22 @@ let events = {}
 bt_double.onclick = () => {
     if(!button.checkName('Apostar')) return
     values.setBet(values.bet * 2)
+    inp_bet_value.value = values.bet
 }
 
 bt_half.onclick = () => {
     if(!button.checkName('Apostar')) return
     if(values.bet > 1)
     values.setBet(values.bet / 2)
+    inp_bet_value.value = values.bet
+}
+
+inp_bet_value.onkeyup=function(e){
+    values.setBet(this.value)
+}
+
+inp_mult_value.onkeyup=function(e){
+    values.setMult(this.value)
 }
 
 // bt_plus.onclick = () => {

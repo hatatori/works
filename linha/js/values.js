@@ -2,21 +2,20 @@ import money from "./money.js"
 
 let values = {
     money: 500,
-    bet: 1,
-    mult: 1,
+    bet: 2,
+    mult: 100,
 
     setBet(n){
-        
-        n = parseFloat(n.toFixed(2))
-        this.bet = n
-        inp_bet_value.value = money(n)
+        // n = parseFloat(n.toFixed(2))
+        this.bet = parseFloat(n)
+        // inp_bet_value.value = money(n)
     },
     
     setMult(n){
-        n = parseFloat(n.toFixed(2))
+        n = parseFloat(n)
         if(n < 1) return
-        this.bet = n
-        inp_mult_value.value = n+"x"
+        if(isNaN(n)) n = Infinity
+        this.mult = n
     },
 
     setMoney(n){
@@ -26,6 +25,11 @@ let values = {
     }
 }
 
+values.setBet(values.bet)
+values.setMoney(values.money)
+values.setMult(values.mult)
+
+inp_bet_value.value = values.bet
 
 
 export default values

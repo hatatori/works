@@ -25,7 +25,6 @@ let game = {
         if(this.porcent == this.limit) {
             this.explode()
             setTimeout(()=>this.renew(), 2000)
-            
         }
         
         // coleta o dinheiro quando clica em retirar
