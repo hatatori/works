@@ -24,6 +24,12 @@ let table = Vue.createApp({
             historico: [1,2,3],
             bets: lista
         }
+    },
+    methods : {
+        quantbets(){
+            let l = this.bets.map(e=>e.bet).reduce((a,b)=>a+=b)
+            return l
+        }
     }
 }).mount('#app')
 

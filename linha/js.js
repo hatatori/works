@@ -46,5 +46,6 @@ game.voar()
 window.onkeyup=function(e){
     if(e.key == "1"){
         console.log(values)
+        console.log(values.profit)
     }
 }

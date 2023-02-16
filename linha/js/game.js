@@ -7,9 +7,10 @@ import button from "./button.js"
 import logic from "./logic.js"
 import table from "./table.js"
 
+
 let game = {
 
-    porcent: 0,
+    porcent: 1,
     stop: false,
     limit: 30,
     canBet: true,
@@ -21,16 +22,16 @@ let game = {
 
     voar(){
 
+
         // estoura quando chega no limite
         if(this.porcent == this.limit) {
             this.explode()
             setTimeout(()=>this.renew(), 2000)
             
-            if(button.getName("Retirar") && values.profit > 0) {
+            if(button.checkName("Retirar") && values.profit > 0) {
                 button.setName("Apostar")
                 values.profit = 0
             }
-
         }
 
         // console.log(this.canBet)
@@ -39,6 +40,7 @@ let game = {
         if(button.checkName('Retirar')){
             values.profit = parseFloat((values.bet * this.porcent).toFixed(2))
             button.el.setAttribute('data-value', " (R$ "+ values.profit.toFixed(2) +")")
+            console.log('ok')
         }else{
             button.el.setAttribute('data-value', ''  )
         }
@@ -98,7 +100,7 @@ let game = {
         }
         // this.canBet = true
 
-        this.porcent = 0
+        this.porcent = 1
         this.stop = false
         foguete.reset()
         this.voar()
