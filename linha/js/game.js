@@ -26,12 +26,19 @@ let game = {
             this.explode()
             setTimeout(()=>this.renew(), 2000)
             
-            // if(button.getName("Retirar")) button.setName("Apostar")
+            if(button.getName("Retirar") && values.profit > 0) {
+                button.setName("Apostar")
+                values.profit = 0
+            }
 
         }
 
+        // console.log(this.canBet)
+        // console.log(this.stop)
+
         if(button.checkName('Retirar')){
-            button.el.setAttribute('data-value', " (R$ "+ (values.bet * this.porcent).toFixed(2)+")")
+            values.profit = parseFloat((values.bet * this.porcent).toFixed(2))
+            button.el.setAttribute('data-value', " (R$ "+ values.profit.toFixed(2) +")")
         }else{
             button.el.setAttribute('data-value', ''  )
         }
