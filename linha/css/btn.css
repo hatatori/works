@@ -38,3 +38,16 @@
   border: solid 3px #22599c;
     background: transparent;
 }
+
+.badge{
+  position: relative;
+}
+
+.badge::after{
+  content: attr(data-value);
+  /* position: absolute; */
+  /* top: auto;
+  bottom: auto;
+  right: 10px;
+  margin: auto; */
+}

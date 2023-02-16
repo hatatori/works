@@ -10,8 +10,9 @@ let logic = {
             game.canBet = false
         }
         if(button.checkName('Retirar')){
-            let lucro = values.bet * values.mult
-            values.setMoney(values.money + lucro)
+            // let lucro = values.bet * values.mult
+            let lucro = values.bet * game.porcent
+            values.setMoney(values.bet + values.money + lucro)
             button.setName('Apostar')
             game.canBet = true
             message.msgWin(lucro)

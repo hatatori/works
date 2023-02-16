@@ -25,10 +25,23 @@ let game = {
         if(this.porcent == this.limit) {
             this.explode()
             setTimeout(()=>this.renew(), 2000)
+            
+            // if(button.getName("Retirar")) button.setName("Apostar")
+
+        }
+
+        if(button.checkName('Retirar')){
+            button.el.setAttribute('data-value', " (R$ "+ (values.bet * this.porcent).toFixed(2)+")")
+        }else{
+            button.el.setAttribute('data-value', ''  )
         }
         
         // coleta o dinheiro quando clica em retirar
-        if(this.canBet == false && this.porcent.toFixed(2) == values.mult.toFixed(2) && button.checkName('Retirar')){
+        if(
+            this.canBet == false && 
+            this.porcent.toFixed(2) == values.mult.toFixed(2) && 
+            button.checkName('Retirar')
+            ){
             logic.collect()
         }
 
