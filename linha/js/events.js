@@ -17,16 +17,16 @@ bt_half.onclick = () => {
     values.setBet(values.bet / 2)
 }
 
-bt_plus.onclick = () => {
-    if(!button.checkName('Apostar')) return
-    values.setMult(parseFloat((values.mult*=1.3).toFixed(2)))
-}
+// bt_plus.onclick = () => {
+//     if(!button.checkName('Apostar')) return
+//     values.setMult(parseFloat((values.mult*=1.3).toFixed(2)))
+// }
 
-bt_less.onclick = () => {
-    if(!button.checkName('Apostar')) return
-    if(values.mult <= 1) return
-    values.setMult(parseFloat((values.mult/=1.3).toFixed(2)))
-}
+// bt_less.onclick = () => {
+//     if(!button.checkName('Apostar')) return
+//     if(values.mult <= 1) return
+//     values.setMult(parseFloat((values.mult/=1.3).toFixed(2)))
+// }
 
 bt_main.onclick = () => logic.collect()
 

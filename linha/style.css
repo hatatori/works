@@ -10,6 +10,7 @@
 @import "./css/menu.css";
 @import "./css/aside.css";
 @import "./css/sides.css";
+@import "./css/input.css";
 
 * {
   margin: 0px;

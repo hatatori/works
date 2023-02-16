@@ -2,28 +2,31 @@
   border-radius: 5px;
   color: white;
   border: none;
-  padding: 5px 20px;
+  /* padding: 5px 20px; */
   font-size: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
+  height: 100%;
   cursor: pointer;
 }
 
-.btn--blue {
+.btn--blue { background-color: #3079d1; }
+.btn--orange { background-color: #ff5722; }
+.btn--purple { background-color: #7b1fa2; }
+.btn--pink { background-color: #d81b60; }
+
+.btn--blue--outline {  
+  outline: solid 1px #3079d1; 
+  outline: solid 1px #ffffff11; 
+  background-color: transparent;
+}
+
+.btn--blue--outline:hover {  
+  outline: solid 1px #11111d; 
   background-color: #3079d1;
-}
-
-.btn--orange {
-  background-color: #ff5722;
-}
-.btn--purple {
-  background-color: #7b1fa2;
-}
-
-.btn--pink {
-  background-color: #d81b60;
+  background-color: #11111d;
 }
 
 .btn--pink--light {
