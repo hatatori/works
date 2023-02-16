@@ -40,7 +40,10 @@ let game = {
         if(button.checkName('Retirar')){
             values.profit = parseFloat((values.bet * this.porcent).toFixed(2))
             button.el.setAttribute('data-value', " (R$ "+ values.profit.toFixed(2) +")")
-            console.log('ok')
+            
+            
+            
+
         }else{
             button.el.setAttribute('data-value', ''  )
         }
