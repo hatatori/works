@@ -6,18 +6,12 @@ import values from "./js/values.js";
 import events from "./js/events.js";
 import button from "./js/button.js";
 import table from "./js/table.js";
+import connection from "./js/connection.js";
 
 // init
 
-// values
-// values.setBet(values.bet)
-// values.setMult(values.mult)
-// values.setMoney(values.money)
-
-// game.init()
-
-game.setLimit(2)
-game.voar()
+// game.setLimit(2)
+// game.voar()
 
 // game.renew()
 
@@ -43,9 +37,4 @@ game.voar()
 
 // table.historico = [1,2,3,4,5,6,7]
 
-window.onkeyup=function(e){
-    if(e.key == "1"){
-        console.log(values)
-        console.log(values.profit)
-    }
-}
+

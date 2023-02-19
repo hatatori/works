@@ -20,15 +20,8 @@ let game = {
         height: bloco.offsetHeight
     },
 
-    end(){
-        this.explode()
-        if(button.checkName("Retirar") && values.profit > 0) {
-            button.setName("Apostar")
-            values.profit = 0
-        }
-    },
-
     voar(){
+
 
         // estoura quando chega no limite
         if(this.porcent == this.limit) {
@@ -41,10 +34,16 @@ let game = {
             }
         }
 
+        // console.log(this.canBet)
+        // console.log(this.stop)
 
         if(button.checkName('Retirar')){
             values.profit = parseFloat((values.bet * this.porcent).toFixed(2))
             button.el.setAttribute('data-value', " (R$ "+ values.profit.toFixed(2) +")")
+            
+            
+            
+
         }else{
             button.el.setAttribute('data-value', ''  )
         }

@@ -3,7 +3,7 @@ import money from "./money.js"
 let values = {
     money: 500,
     bet: 2,
-    mult: 100,
+    mult: Infinity,
 
     setBet(n){
         // n = parseFloat(n.toFixed(2))

@@ -76,7 +76,7 @@ document.querySelector("#topo").style.display = "none"
 document.querySelector("#table").style.display = "none"
 document.querySelector(".pages").style.display = "none"
 
-var socket = io("https://ws-homolog.primebets.bet");
+var socket = io("https://ws-double-homolog.primebets.bet");
 
 socket.on('connect', () => {
     const payload = { token: connection.token, game: 'double' }
