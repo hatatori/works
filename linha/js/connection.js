@@ -84,7 +84,7 @@ socket.on('connect', (ok) => {
     console.log('register')
     console.log(msg)
 
-    game.porcent = msg.multiplier
+    // game.porcent = msg.multiplier
 
     values.setMoney(msg.balance)
     table.historico = msg.currentRound.history
