@@ -38,7 +38,6 @@ let connection = {
   },
 
   complete(){
-    console.log('complete')
     fetch(this.url+this.complete_url,{
       method:"PUT",
       headers:{ 
@@ -46,6 +45,11 @@ let connection = {
           "Content-Type": "application/json",
           "Authorization": "Bearer "+this.token
       }
+    })
+    .then(e=>e.json())
+    .then(e=>{
+      console.log('eita')
+      console.log(e)
     })
   },
 
@@ -77,7 +81,7 @@ socket.on('connect', (ok) => {
   socket.emit('register', payload)
   
   socket.on('registerCallback', msg => {
-    console.log('msg')
+    console.log('register')
     console.log(msg)
 
     values.setMoney(msg.balance)
@@ -88,12 +92,13 @@ socket.on('connect', (ok) => {
   })
   
   socket.on('crash.tick', tik => {
-    console.log('tik')
     
-    console.log(tik)
+    // console.log('tik')
+    // console.log(tik)
     
     if(tik.status == 'complete'){
       game.end()
+      p_texto.innerHTML = 'x'+tik.multiplier
     }
 
     if(tik.status == 'started'){
@@ -111,11 +116,6 @@ socket.on('connect', (ok) => {
 
 })
 
-window.onkeyup=function(e){
-  if(e.key == "1") connection.bet()
-  if(e.key == "2") connection.complete()
-  if(e.key == "3") connection.cachout()
-  if(e.key == "4") message.normal("vai")
-}
+
 
 export default connection

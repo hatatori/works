@@ -38,3 +38,18 @@ import connection from "./js/connection.js";
 // table.historico = [1,2,3,4,5,6,7]
 
 
+window.onkeyup=function(e){
+    if(e.key == "1") connection.bet()
+    
+    if(e.key == "2") {
+      console.log(2)
+      connection.complete()
+    }
+
+    if(e.key == "3") connection.cachout()
+    if(e.key == "4") message.normal("vai")
+  
+    if(e.key == "5") {
+      game.porcent = 10
+    }
+  }

@@ -22,6 +22,7 @@ let game = {
 
     end(){
         this.explode()
+        // game.porcent = val
         if(button.checkName("Retirar") && values.profit > 0) {
             button.setName("Apostar")
             values.profit = 0
