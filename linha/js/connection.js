@@ -70,6 +70,26 @@ let connection = {
   }
 }
 
+// d1: new Date(tik.createdAt),
+// d2: new Date(tik.updatedAt),
+
+let time = {
+  d1: new Date(),
+  d2: new Date(),
+  d3: new Date(),
+  fact: 1.01,
+
+  dif(){
+    return (this.d3.getTime() - this.d2.getTime())/1000
+  },
+
+  calc(){
+    this.val = 1.01 * this.dif()
+    return this.val
+  }
+
+}
+
 connection.init()
 
 var socket = io("https://ws-double-crash.primebets.bet");
@@ -85,6 +105,8 @@ socket.on('connect', (ok) => {
     console.log(msg)
 
     // game.porcent = msg.multiplier
+    // game.porcent = msg.multiplier
+    // console.log(game.porcent)
 
     values.setMoney(msg.balance)
     table.historico = msg.currentRound.history
@@ -105,6 +127,16 @@ socket.on('connect', (ok) => {
 
     if(tik.status == 'started'){
       game.reset()
+
+      // console.log('started')
+      // console.log(tik)
+      
+      time.d1 = new Date(tik.createdAt)
+      time.d2 = new Date(tik.updatedAt)
+      time.d3 = new Date()
+
+      game.porcent = time.calc()
+
     }
     
     // setInterval(()=>{

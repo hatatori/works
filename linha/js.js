@@ -50,6 +50,6 @@ window.onkeyup=function(e){
     if(e.key == "4") message.normal("vai")
   
     if(e.key == "5") {
-      game.porcent = 10
+      game.porcent = 89
     }
   }
