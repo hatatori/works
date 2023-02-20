@@ -7,9 +7,11 @@ let time = {
       return (this.d3.getTime() - this.d2.getTime())/1000
     },
     calc(){
-      this.val = 1.01 * this.dif()
+      this.val = 1.1 * this.dif()
       return this.val
     }
   }
 
 export default time
+
+

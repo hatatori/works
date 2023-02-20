@@ -68,6 +68,7 @@ let game = {
         }
 
         time.d3 = new Date()
+        
         // console.log(time.calc())
 
         this.porcent = time.calc()
