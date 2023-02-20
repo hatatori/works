@@ -6,6 +6,7 @@ import estrelas from "./estrelas.js"
 import button from "./button.js"
 import logic from "./logic.js"
 import table from "./table.js"
+import time from "./time.js"
 
 
 let game = {
@@ -66,16 +67,23 @@ let game = {
             this.canBet = true
         }
 
-        this.porcent += 0.01
+        time.d3 = new Date()
+        // console.log(time.calc())
+
+        this.porcent = time.calc()
         this.porcent = parseFloat(this.porcent.toFixed(3))
 
         // animação de texto e foguete
-        line(this.porcent*10)
+        line(this.porcent * 5)
+
         if(this.porcent > 90 || this.stop == true) return
-        setTimeout(()=>{ this.voar() },1*1000/60)
+        
+        setTimeout(()=>{ this.voar() }, 1000/60)
+        
         message.normal("x"+this.porcent.toFixed(2))
         estrelas.proximaEstrela()
-        fundo.style.transform = `translateY(${this.porcent * 200}px)`;
+        
+        fundo.style.transform = `translateY(${this.porcent * 20}px)`;
     },
 
     explode(){

@@ -4,6 +4,7 @@ import values from "./values.js"
 import table from "./table.js"
 import message from "./message.js"
 import game from "./game.js"
+import time from "./time.js"
 
 let connection = {
 
@@ -73,22 +74,19 @@ let connection = {
 // d1: new Date(tik.createdAt),
 // d2: new Date(tik.updatedAt),
 
-let time = {
-  d1: new Date(),
-  d2: new Date(),
-  d3: new Date(),
-  fact: 1.01,
-
-  dif(){
-    return (this.d3.getTime() - this.d2.getTime())/1000
-  },
-
-  calc(){
-    this.val = 1.01 * this.dif()
-    return this.val
-  }
-
-}
+// let time = {
+//   d1: new Date(),
+//   d2: new Date(),
+//   d3: new Date(),
+//   fact: 1.01,
+//   dif(){
+//     return (this.d3.getTime() - this.d2.getTime())/1000
+//   },
+//   calc(){
+//     this.val = 1.01 * this.dif()
+//     return this.val
+//   }
+// }
 
 connection.init()
 
