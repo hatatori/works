@@ -68,16 +68,18 @@ let game = {
         }
 
         time.d3 = new Date()
-        
-        // console.log(time.calc())
+        // console.log(time.d3.getTime())
 
+        // console.log(time)
         this.porcent = time.calc()
-        this.porcent = parseFloat(this.porcent.toFixed(3))
+
+        // this.porcent = parseFloat(this.porcent.toFixed(3))
 
         // animação de texto e foguete
         line(this.porcent * 5)
 
-        if(this.porcent > 90 || this.stop == true) return
+        // if(this.porcent > 90 || this.stop == true) return
+        if(this.stop == true) return
         
         setTimeout(()=>{ this.voar() }, 1000/60)
         

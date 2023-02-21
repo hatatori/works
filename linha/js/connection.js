@@ -71,23 +71,6 @@ let connection = {
   }
 }
 
-// d1: new Date(tik.createdAt),
-// d2: new Date(tik.updatedAt),
-
-// let time = {
-//   d1: new Date(),
-//   d2: new Date(),
-//   d3: new Date(),
-//   fact: 1.01,
-//   dif(){
-//     return (this.d3.getTime() - this.d2.getTime())/1000
-//   },
-//   calc(){
-//     this.val = 1.01 * this.dif()
-//     return this.val
-//   }
-// }
-
 connection.init()
 
 var socket = io("https://ws-double-crash.primebets.bet");
@@ -99,12 +82,23 @@ socket.on('connect', (ok) => {
   socket.emit('register', payload)
   
   socket.on('registerCallback', msg => {
+
     console.log('register')
     console.log(msg)
 
     // game.porcent = msg.multiplier
     // game.porcent = msg.multiplier
     // console.log(game.porcent)
+
+    // time.d2 = new Date(msg.currentRound.createdAt)
+    
+    // time.t = msg.currentRound.timestamp
+    // time.d2 = new Date(msg.currentRound.updatedAt)
+    
+    // let d = new Date()
+    time.d2 = new Date(msg.currentRound.updatedAt)
+    // time.d2 = new Date(msg.currentRound.timestamp)
+
 
     values.setMoney(msg.balance)
     table.historico = msg.currentRound.history
@@ -114,11 +108,19 @@ socket.on('connect', (ok) => {
   })
   
   socket.on('crash.tick', tik => {
-    
-    // console.log('tik')
-    // console.log(tik)
+
+    console.log('tik')
+    console.log(tik)
+    time.d2 = new Date(tik.createdAt)
+
+
+    let d = new Date().getTime()
+
+    console.log(tik.timestamp)
+    console.log(d)
     
     if(tik.status == 'complete'){
+      console.log(game.porcent)
       game.end()
       p_texto.innerHTML = 'x'+tik.multiplier
     }
@@ -126,20 +128,11 @@ socket.on('connect', (ok) => {
     if(tik.status == 'started'){
       game.reset()
 
-      // console.log('started')
-      // console.log(tik)
-      
-      time.d1 = new Date(tik.createdAt)
-      time.d2 = new Date(tik.updatedAt)
       time.d3 = new Date()
-
+      time.d2 = new Date(tik.updatedAt)
       game.porcent = time.calc()
 
     }
-    
-    // setInterval(()=>{
-    //   console.log(tik)
-    // }, 500 )
     
   })
 
