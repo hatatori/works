@@ -39,6 +39,7 @@ let connection = {
   },
 
   complete(){
+
     fetch(this.url+this.complete_url,{
       method:"PUT",
       headers:{ 
@@ -49,8 +50,13 @@ let connection = {
     })
     .then(e=>e.json())
     .then(e=>{
-      console.log('eita')
-      console.log(e)
+      // console.log('eita')
+      // console.log(e)
+
+      // game.end()
+      // p_texto.innerHTML = 'x'+tik.multiplier
+      
+
     })
   },
 
@@ -108,18 +114,14 @@ socket.on('connect', (ok) => {
   })
   
   socket.on('crash.tick', tik => {
-
-    console.log('tik')
-    console.log(tik)
+    
     time.d2 = new Date(tik.createdAt)
-
-
     let d = new Date().getTime()
-
     console.log(tik.timestamp)
     console.log(d)
     
     if(tik.status == 'complete'){
+      connection.complete()
       console.log(game.porcent)
       game.end()
       p_texto.innerHTML = 'x'+tik.multiplier

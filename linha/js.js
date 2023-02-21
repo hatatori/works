@@ -42,7 +42,7 @@ window.onkeyup=function(e){
     if(e.key == "1") connection.bet()
     
     if(e.key == "2") {
-      console.log(2)
+      // console.log(2)
       connection.complete()
     }
 
