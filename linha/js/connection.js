@@ -50,13 +50,10 @@ let connection = {
     })
     .then(e=>e.json())
     .then(e=>{
-      // console.log('eita')
-      // console.log(e)
-
+      // alert('ok')
+      // game.end()
       // game.end()
       // p_texto.innerHTML = 'x'+tik.multiplier
-      
-
     })
   },
 
@@ -91,6 +88,11 @@ socket.on('connect', (ok) => {
 
     console.log('register')
     console.log(msg)
+    
+    console.log("tempo")
+    console.log(new Date())
+    
+
 
     // game.porcent = msg.multiplier
     // game.porcent = msg.multiplier
@@ -121,9 +123,8 @@ socket.on('connect', (ok) => {
     console.log(d)
     
     if(tik.status == 'complete'){
-      connection.complete()
-      console.log(game.porcent)
       game.end()
+      console.log(game.porcent)
       p_texto.innerHTML = 'x'+tik.multiplier
     }
 
