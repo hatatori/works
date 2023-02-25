@@ -86,25 +86,44 @@ socket.on('connect', (ok) => {
   
   socket.on('registerCallback', msg => {
 
-    console.log('register')
-    console.log(msg)
+    // console.log('register')
+    // console.log(msg)
     
-    console.log("tempo")
-    console.log(new Date())
     
+    // time.d2 = new Date(msg.currentRound.createdAt)
+    // time.d2 = new Date(tik.baseTime)
+    // time.d2 = new Date(msg.currentRound.updatedAt)
+    
+    // let a = new Date(msg.currentRound.timestamp)
+    // let b = new Date()
 
+    // let c = (b.getTime() - a.getTime())/1000
+    // console.log(c)
+    
+    
+    // console.log('>> tempo')
+    // time.d2 = new Date(msg.currentRound.timestamp)
+    // console.log(time.d2.getTime())
+    // console.log(new Date())
+
+    // console.log(d.getTime())
+    // let d = new Date()
+
+    // console.log('>> ')
+    // console.log(time.d2.getTime())
+    // console.log(d.getTime())
+    // console.log(d.getTime() - time.d2.getTime())
+    // console.log((d.getTime() - time.d2.getTime())/1000)
 
     // game.porcent = msg.multiplier
     // game.porcent = msg.multiplier
     // console.log(game.porcent)
 
-    // time.d2 = new Date(msg.currentRound.createdAt)
     
     // time.t = msg.currentRound.timestamp
     // time.d2 = new Date(msg.currentRound.updatedAt)
     
     // let d = new Date()
-    time.d2 = new Date(msg.currentRound.updatedAt)
     // time.d2 = new Date(msg.currentRound.timestamp)
 
 
@@ -117,10 +136,43 @@ socket.on('connect', (ok) => {
   
   socket.on('crash.tick', tik => {
     
-    time.d2 = new Date(tik.createdAt)
-    let d = new Date().getTime()
-    console.log(tik.timestamp)
-    console.log(d)
+    console.log(tik)
+    // time.d2 = new Date(tik.timestamp)
+    // time.d2 = new Date(tik.updatedAt)
+    // time.d2 = new Date(tik.baseTime)
+
+    time.d2 = new Date(tik.baseTime)
+    
+    // let my_time = new Date().getTime()
+    // time.delay = Math.abs(time.d2.getTime() - my_time)
+    // time.d2 = new Date(time.d2.getTime() + time.delay)
+
+
+    // time.d2 = new Date(time.d2.getTime() + my_time )
+    // time.d2 = new Date(tik.baseTime)
+    // console.log(my_time)
+
+    // console.log('tempo')
+    // console.log(new Date(time.d2.getTime()))
+    // console.log(time.d2.getTime())
+    // console.log(new Date(my_time))
+    // console.log(my_time)
+    // console.log((time.d2.getTime() - my_time))
+    // console.log(Math.abs(time.d2.getTime() - my_time))
+    // console.log(Math.abs(time.d2.getTime() - my_time)/1000)
+    // console.log(Math.abs(time.d2.getTime() - my_time)/10000)
+
+    // let a = new Date(tik.timestamp)
+    // let b = new Date(tik.createdAt)
+    // let c = (b.getTime() - a.getTime())/1000
+    // console.log("tik")
+    // console.log(tik)
+
+    // let d = new Date().getTime()
+    // console.log('tik')
+    // console.log(tik)
+    // console.log(tik.timestamp)
+    // console.log(d)
     
     if(tik.status == 'complete'){
       game.end()
