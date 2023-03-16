@@ -71,10 +71,9 @@ let Connection = {
       let buttons = [...document.querySelector('.choicebomb-select-window-buttons').children]
       buttons.slice(e.data.bombs).map(e=>e.remove())
       // buttons.slice(5).map(e=>e.remove())
+
       
-
-      console.log(e.data.bombs)
-
+      
 
       Values.setWallet(balance)
       Values.minBet = minBet
