@@ -51,17 +51,31 @@ let Connection = {
     .then(e=>{
       // console.log(e.status)
       this.check_connection(e.status)
+
+
       
       return e.json()
     })
 
     .then(e=> {
 
-      
+      console.log(e.data)
 
       this.check_connection(e)
       this.check_connection(e.status)
       let {balance, minBet, maxBet, taxes, user, gameId} = e.data
+
+
+      
+      // let buttons = [...document.querySelectorAll('.buttons').children]
+      let buttons = [...document.querySelector('.choicebomb-select-window-buttons').children]
+      buttons.slice(e.data.bombs).map(e=>e.remove())
+      // buttons.slice(5).map(e=>e.remove())
+      
+
+      console.log(e.data.bombs)
+
+
       Values.setWallet(balance)
       Values.minBet = minBet
       Values.maxBet = maxBet
@@ -79,6 +93,8 @@ let Connection = {
 
       Cards.FieldBombs(Cards.bombs);
       Cards.Render();
+
+      
 
 
     })
@@ -107,6 +123,8 @@ let Connection = {
     .then(e=> { 
       this.roundId = e.data.roundId  
       Values.setBonus(e.data.continue)
+
+      
     })
 
     // axios.post(this.url+this.u_start, obj).then(e=> this.check_connection(e.status))
