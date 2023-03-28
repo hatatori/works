@@ -52,10 +52,10 @@ let Cards = {
         
         if(Logic.gameOver) return 
 
-        if(Values.bonus == 0){
-          Message("Você deve apostar algum valor")
-          return false
-        }
+        // if(Values.bonus == 0){
+        //   Message("Você deve apostar algum valor")
+        //   return false
+        // }
         
 
         t.position = this.position
