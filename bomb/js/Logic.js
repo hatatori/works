@@ -55,10 +55,14 @@ let Logic = {
   },
 
   double_2() {
+    
+    
     if (this.getButton() == "Parar") {
       Message("Conclua a jogada primeiro");
       return false;
     }
+    
+    
 
     if (Values.bet < Values.maxBet) {
       Values.setBet(Values.bet * 2);

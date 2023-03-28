@@ -69,18 +69,12 @@ let game = {
 
         time.d3 = new Date()
         
-
-
-        // console.log(time.d3.getTime())
-
-        // console.log(time.d2.getTime())
-        // console.log(time.d3.getTime())
-        // console.log((time.d3.getTime() - time.d2.getTime())/1000)
-
-        // console.log(time)
-        this.porcent = time.calc()
+        // importrante
+        // this.porcent = time.calc()
 
         // this.porcent = parseFloat(this.porcent.toFixed(3))
+        this.porcent = time.mult
+
 
         // animação de texto e foguete
         line(this.porcent * 5)
@@ -90,7 +84,8 @@ let game = {
         
         setTimeout(()=>{ this.voar() }, 1000/60)
         
-        message.normal("x"+this.porcent.toFixed(2))
+        // message.normal("x"+this.porcent.toFixed(2))
+
         estrelas.proximaEstrela()
         
         fundo.style.transform = `translateY(${this.porcent * 20}px)`;

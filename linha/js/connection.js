@@ -50,6 +50,10 @@ let connection = {
     })
     .then(e=>e.json())
     .then(e=>{
+
+      console.log('COMPLETE')
+      console.log(e)
+
       // alert('ok')
       // game.end()
       // game.end()
@@ -87,8 +91,17 @@ socket.on('connect', (ok) => {
   socket.on('registerCallback', msg => {
 
     // console.log('register')
-    // console.log(msg)
-    
+    // console.log('msg')
+    // console.log(Date.now())
+    // console.log(Date.now() - msg.currentRound)
+
+    console.log('registerCallback')
+    console.log(msg)
+    console.log(msg.createdAt)
+
+    console.log(Date.now() - msg.currentRound.baseTime)
+    console.log(Date.now() - msg.currentRound.createdAt)
+    console.log(Date.now() - msg.currentRound.updatedAt)
     
     // time.d2 = new Date(msg.currentRound.createdAt)
     // time.d2 = new Date(tik.baseTime)
@@ -178,14 +191,17 @@ socket.on('connect', (ok) => {
       game.end()
       console.log(game.porcent)
       p_texto.innerHTML = 'x'+tik.multiplier
+      time.check = false
     }
 
     if(tik.status == 'started'){
       game.reset()
 
-      time.d3 = new Date()
-      time.d2 = new Date(tik.updatedAt)
-      game.porcent = time.calc()
+      // time.d3 = new Date()
+      // time.d2 = new Date(tik.updatedAt)
+      // game.porcent = time.calc()
+      time.check = true
+      time.timestamp = tik.updatedAt
 
     }
     

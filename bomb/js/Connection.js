@@ -65,15 +65,11 @@ let Connection = {
       this.check_connection(e.status)
       let {balance, minBet, maxBet, taxes, user, gameId} = e.data
 
-
       
       // let buttons = [...document.querySelectorAll('.buttons').children]
       let buttons = [...document.querySelector('.choicebomb-select-window-buttons').children]
       buttons.slice(e.data.bombs).map(e=>e.remove())
       // buttons.slice(5).map(e=>e.remove())
-
-      
-      
 
       Values.setWallet(balance)
       Values.minBet = minBet
