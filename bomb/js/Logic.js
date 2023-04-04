@@ -223,11 +223,11 @@ let Logic = {
 
     Values.refreshBonus2();
 
-    document.querySelector('.choicebomb-select-window').style.display = "none"
+    // document.querySelector('.choicebomb-select-window').style.display = "none"
     
-    setTimeout(()=>{
-      document.querySelector('.choicebomb-select-window').removeAttribute("style")
-    },500)
+    // setTimeout(()=>{
+    //   document.querySelector('.choicebomb-select-window').removeAttribute("style")
+    // },500)
 
 
   },

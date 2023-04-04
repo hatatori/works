@@ -31,6 +31,10 @@ let bt_bombs = document.querySelector(".buttons")
 
 // console.log(bt_bombs.children.length)
 
+document.querySelector(".choicebomb").onclick=function(){
+    this.querySelector(".choicebomb-select-window").classList.toggle("choicebomb-select-window-active")
+}
+
 for(let i = 0; i <= bt_bombs.children.length-1 ; i++){
     bt_bombs.children[i].onclick = () => Logic.setBtBomb(i+1)
 }

@@ -17,11 +17,12 @@
     width: 80px;
 }
 
-.choicebomb:hover .choicebomb-select-window {
+/* .choicebomb:hover .choicebomb-select-window {
     opacity: 1;
     translate: 0px;
     pointer-events: inherit;
-}
+} */
+
 
 .choicebomb-select-window {
     position: absolute;
@@ -77,4 +78,10 @@
 
 .choicebomb-select-window-status img{
     vertical-align: middle;
+}
+
+.choicebomb-select-window-active {
+    opacity: 1;
+    translate: 0px;
+    pointer-events: inherit;
 }
